@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AlohAI">
+  <title>AlohAI</title>
+  <defs>
+    <mask id="sea">
+      <rect width="64" height="64" fill="#fff"/>
+      <rect x="0" y="37" width="64" height="5" rx="2.5" fill="#000"/>
+      <rect x="0" y="47" width="64" height="5" rx="2.5" fill="#000"/>
+    </mask>
+  </defs>
+  <circle cx="30" cy="34" r="26" fill="#F24A9D" mask="url(#sea)"/>
+  <circle cx="52" cy="11" r="7" fill="#FFD638"/>
+</svg>
