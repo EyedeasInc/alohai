@@ -3,390 +3,1305 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlohAI — Microsoft Power Platform + AI (Honolulu)</title>
-  <meta name="description" content="AlohAI is community conference in Honolulu focused on Microsoft Power Platform, Copilot, and AI. Dec 30, 2025 at Entrepreneurs Sandbox.">
+  <title>AlohAI 2026 · Author AI agents in Honolulu</title>
+  <meta name="description" content="AlohAI is a one-morning, hands-on AI training day in Honolulu for Hawaiʻi's community: author AI agents with Microsoft Copilot Studio and Power Platform. Wednesday, December 23, 2026.">
   <link rel="canonical" href="https://alohaiconf.com/">
-  <meta name="theme-color" content="#0f6cbd">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="img/brand/alohai-mark.svg" type="image/svg+xml">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AlohAI — Microsoft Power Platform + AI (Honolulu)">
-  <meta property="og:description" content="Dec 30, 2025 · 9AM–12PM (HST) · Entrepreneurs Sandbox · Power Platform, Copilot, MCP, GitHub Copilot. Join us in Honolulu.">
-  <meta property="og:type" content="event">
+  <meta property="og:title" content="AlohAI 2026 · Author AI agents in Honolulu">
+  <meta property="og:description" content="Wednesday, December 23, 2026 · Honolulu · Hands-on AI training for Hawaiʻi: author AI agents with Copilot Studio and Power Platform.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://alohaiconf.com/">
-  <meta property="og:image" content="https://alohaiconf.com/alohai-banner.png">
+  <meta property="og:image" content="https://alohaiconf.com/img/og.png">
   <meta property="og:locale" content="en_US">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AlohAI — Microsoft Power Platform + AI (Honolulu)">
-  <meta name="twitter:description" content="Dec 30, 2025 · 9AM–12PM (HST) · Entrepreneurs Sandbox · Power Platform, Copilot, MCP, GitHub Copilot. Join us in Honolulu.">
-  <meta name="twitter:image" content="https://alohaiconf.com/alohai-banner.png">
+  <meta name="twitter:title" content="AlohAI 2026 · Author AI agents in Honolulu">
+  <meta name="twitter:description" content="Wednesday, December 23, 2026 · Honolulu · Hands-on AI training: author AI agents with Copilot Studio and Power Platform.">
+  <meta name="twitter:image" content="https://alohaiconf.com/img/og.png">
   <meta name="twitter:site" content="@thevictordantas">
 
-  <!-- JSON-LD (Event) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "AlohAI — Microsoft Power Platform + AI",
-    "description": "A community event focused on Microsoft Power Platform and AI.",
-    "startDate": "2025-12-30T09:00:00-10:00",
-    "endDate": "2025-12-30T12:00:00-10:00",
+    "name": "AlohAI 2026: Author AI agents with Copilot Studio and Power Platform",
+    "description": "A one-morning, hands-on AI training day in Honolulu for Hawaiʻi's community, on authoring AI agents with Microsoft Copilot Studio and Power Platform.",
+    "startDate": "2026-12-23",
+    "endDate": "2026-12-23",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "location": {
       "@type": "Place",
-      "name": "Entrepreneurs Sandbox",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Honolulu",
-        "addressRegion": "HI",
-        "addressCountry": "US"
-      }
+      "name": "Honolulu (venue to be announced)",
+      "address": { "@type": "PostalAddress", "addressLocality": "Honolulu", "addressRegion": "HI", "addressCountry": "US" }
     },
-    "image": ["https://alohaiconf.com/alohai-banner.png"],
-    "organizer": {
-      "@type": "Victor Dantas - MVP",
-      "name": "AlohAI Community"
-    }
+    "image": ["https://alohaiconf.com/img/og.png"],
+    "organizer": { "@type": "Person", "name": "Victor Dantas", "url": "https://alohaiconf.com/" }
   }
   </script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Apple-style modern font stack (SF Pro) with safe fallbacks -->
-  <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=pilcrow-rounded@400,500,700&display=swap" rel="stylesheet">
 
   <style>
+    /* Colours follow the Microsoft Copilot Studio mark: deep navy, Copilot blue, violet, with its warm and green notes as accents */
     :root{
-      --pp-purple:#742774;
-      --pp-teal:#00b7c3;
-      --pp-blue:#0f6cbd;
-      --pp-green:#107c10;
-      --pp-yellow:#ffb900;
-      --ink:#0f172a;
-      --ink-2:#334155;
-      --bg:#fafafa;
-      --brand:#0f6cbd;
-    }
-    html,body{
-      font-family:'SF Pro Display','SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-    }
-    h1,h2,h3,h4,h5,h6{ font-weight:600; letter-spacing:-0.015em; }
-    p.lead{ font-weight:400; color:#f0f0f0 }
+      --bg:#ffffff;
+      --ink:#0e1033;
+      --lilac:#f3eeff;
+      --lilac-2:#e7dcff;
+      --blue:#2764e7;            /* primary action */
+      --blue-ink:#ffffff;
+      --violet:#5b2ab5;          /* chapter field */
+      --violet-deep:#3b1c7a;
+      --violet-mid:#6e3bd0;
+      --violet-soft:#c4a8ff;
+      --yellow:#ffd638;
+      --green:#2fae5e;
+      --win:#14122b;             /* product window chrome */
+      --win-2:#1d1a3a;
+      --win-ink:#ecebf7;
+      --win-dim:#b9b4d6;
 
-    /* HERO */
-      .appbar {
-          /*min-height: 850px;*/
-          background: linear-gradient(135deg, rgba(130, 100,189,.82), rgba(0,0,0,.45)), url('img/alohai-hero.png');
-          background-size: cover;
-          background-position: center;
-          filter: brightness(0.95) saturate(1.1);
-          backdrop-filter: blur(4px);
-          /*background: linear-gradient(135deg, rgba(15,108,189,.92), rgba(116,39,116,.92)), 
-              url('data:image/svg+xml;utf8,\<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1200 600\'><defs><linearGradient id=\'g\' x1=\'0\' x2=\'1\' y1=\'0\' y2=\'1\'><stop offset=\'0\' stop-color=\'%2300b7c3\'/><stop offset=\'1\' stop-color=\'%23742774\'/></linearGradient></defs><g fill=\'none\' stroke=\'white\' stroke-opacity=\'.12\'><path d=\'M0 520 C200 420 400 580 600 520 S1000 420 1200 520 L1200 600 L0 600 Z\' fill=\'url(%23g)\'/></g></svg>');
-            background-size:cover;background-position:center; filter:brightness(0.95) saturate(1.1);*/
-          backdrop-filter: blur(4px);
-          color: #fff;
-          display: flex;
-          align-items: center;
-          position: relative;
-          overflow: hidden;
-      }
-    .hero:after{
-      content:""; position:absolute; left:-10%; right:-10%; bottom:-1px; height:160px;
-/*      background: url('data:image/svg+xml;utf8,\
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">\
-        <path fill="%23fafafa" d="M0,224L80,234.7C160,245,320,267,480,256C640,245,800,203,960,170.7C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>\
-      </svg>') bottom center/cover no-repeat;*/
-      pointer-events:none;
-    }
-    .badge-chip{
-      background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.3); color:#fff;
-      padding:.35rem .6rem; border-radius:999px; font-weight:700; letter-spacing:.3px;
-      backdrop-filter:saturate(140%) blur(4px);
-    }
-    .btn-brand{ background:var(--brand); border:0; color:#fff; font-weight:600; border-radius:12px; padding:12px 28px; }
-    .btn-outline-brand{ border:2px solid #fff; color:#fff; font-weight:600; border-radius:12px; padding:12px 28px; }
-    .btn-brand:hover{ filter:brightness(1.05); }
-    .shadow-soft{ box-shadow: 0 10px 30px rgba(2, 6, 23, .08); }
-    .card{ border:0; }
-    .card-gradient{
-      background: linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
-      border:1px solid #e6eefb;
-    }
-    .icon-blob{
-      width:56px; height:56px; border-radius:14px; display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(255,185,0,.18), rgba(0,183,195,.18));
-      border:1px solid rgba(15,108,189,.18);
-    }
-    .footer{ background:#0b4f8f; color:#dbeafe; }
-    a.link-map { text-decoration: none; font-weight:600; }
-    .sessionize-embed{
-      min-height: 400px;
-      border-radius: 16px;
-      border:1px dashed #cbd5e1;
-      background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 10px, #f1f5f9 10px, #f1f5f9 20px);
-      display:flex; align-items:center; justify-content:center;
-      color:#475569;
-    }
-    .logo-mark{ display:inline-grid; grid-auto-flow:column; gap:6px; align-items:center; font-weight:800; letter-spacing:.4px;}
-    .logo-dot{width:10px;height:10px;border-radius:2px;display:inline-block}
-    .dot-purple{background:var(--pp-purple)}
-    .dot-teal{background:var(--pp-teal)}
-    .dot-blue{background:var(--pp-blue)}
-    .dot-yellow{background:var(--pp-yellow)}
-    .palm{ position:absolute; right:2%; bottom:-12px; width:120px; opacity:.25; filter: drop-shadow(0 6px 12px rgba(2,6,23,.1)); transform: rotate(-6deg); }
-    @media (max-width: 576px){ .hero h1{ font-size:1.9rem } .palm{ width:82px } }
+      --font:'Pilcrow Rounded', ui-rounded, 'SF Pro Rounded', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --ui:system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+      --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+      --step-head: clamp(1.75rem, 1.2rem + 1.4vw, 2.25rem);
+      --step-display: clamp(3.25rem, 1rem + 6.2vw, 6.5rem);
 
-    /* Partner / logo chips (placeholders for official logos) */
-    .brand-strip{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 24px;
+      --margin: 64px;
+      --gap: clamp(12px, 2vw, 32px);
+      --radius: 999px;
+      --tile: 20px;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+      --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
     }
-    @media (max-width: 768px){ .brand-strip{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-    .logo-chip{
-      background:#fff;
-      border:1px solid #e5e7eb;
-      border-radius: 14px;
-      padding: 12px 14px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-      box-shadow:0 6px 16px rgba(2,6,23,.06);
-      min-height:64px;
+    *,*::before,*::after{ box-sizing:border-box }
+    html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:96px }
+    @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto } }
+    body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--font); font-size:var(--step-body); line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:clip }
+    img,svg{ display:block; max-width:100%; height:auto }
+    a{ color:inherit }
+    h1,h2,h3,p{ margin:0 }
+    h1,h2{ font-weight:700; letter-spacing:-0.045em; line-height:0.92; text-transform:lowercase; font-size:var(--step-display); text-wrap:balance }
+    :focus-visible{ outline:3px solid var(--blue); outline-offset:3px; border-radius:6px }
+    ::selection{ background:var(--yellow); color:var(--ink) }
+    .wrap{ padding-inline:var(--margin) }
+    .grid{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap) }
+    .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap }
+
+    /* Buttons: one shape, fully round, flat */
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:.6em; min-height:56px; padding:0 30px; border-radius:var(--radius); border:0; font:500 var(--step-body)/1 var(--font); text-decoration:none; cursor:pointer; background:var(--blue); color:var(--blue-ink); transition: transform 160ms var(--ease-out), background-color 200ms ease }
+    .btn:active{ transform:scale(0.97) }
+    .btn-ink{ background:var(--ink); color:#fff }
+    .btn-paper{ background:#fff; color:var(--ink) }
+    @media (hover:hover) and (pointer:fine){
+      .btn:hover{ background:#1f52c7 }
+      .btn-ink:hover{ background:#262a5c }
+      .btn-paper:hover{ background:var(--lilac) }
+      .btn .arrow{ transition: transform 200ms var(--ease-out) }
+      .btn:hover .arrow{ transform:translateX(4px) }
     }
-    .logo-chip svg{ flex: 0 0 auto }
-    .logo-chip span{ font-weight:700; letter-spacing:.2px; color:#0f172a }
-    .chip-pp svg .a{ fill:#742774 } .chip-pp svg .b{ fill:#00b7c3 } .chip-pp svg .c{ fill:#ffb900 } .chip-pp svg .d{ fill:#107c10 }
-    .chip-copilot svg stop:nth-child(1){ stop-color:#6ee7ff } .chip-copilot svg stop:nth-child(2){ stop-color:#7c3aed }
-    .chip-mcp svg .m1{ fill:#0f6cbd } .chip-mcp svg .m2{ fill:#107c10 } .chip-mcp svg .m3{ fill:#ffb900 }
-    .chip-gh svg{ stroke:#111827 }
+    .textlink{ text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:4px }
+
+    /* Registration status: information, not a control */
+    .status{ display:inline-flex; align-items:center; gap:12px; font-weight:700; font-size:var(--step-lead); letter-spacing:-0.02em }
+    .status .dot{ width:12px; height:12px; border-radius:50%; background:var(--green); flex:0 0 auto; position:relative }
+    .status .dot::after{ content:""; position:absolute; inset:0; border-radius:50%; background:var(--green); animation: ping 2.4s var(--ease-out) infinite }
+    @keyframes ping{ from{ transform:scale(1); opacity:.6 } to{ transform:scale(2.6); opacity:0 } }
+
+    /* Wordmark */
+    .wordmark{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:32px; letter-spacing:-0.05em; line-height:1 }
+    .wordmark svg{ width:40px; height:40px }
+
+    /* ---------- Product window (Copilot at work) ---------- */
+    .win{ background:var(--win); color:var(--win-ink); border-radius:16px; overflow:hidden; font-family:var(--ui); font-size:15px; line-height:1.45; text-align:left }
+    .win-bar{ display:flex; align-items:center; gap:10px; padding:12px 16px; background:var(--win-2); font-weight:600; font-size:14px }
+    .win-bar img{ width:20px; height:20px }
+    .win-bar{ white-space:nowrap }
+    .win-bar .meta{ margin-left:auto; font-weight:400; color:var(--win-dim); min-width:0; overflow:hidden; text-overflow:ellipsis }
+    .win-bar button{ all:unset; cursor:pointer; margin-left:12px; padding:6px 12px; border-radius:6px; background:#2a2650; color:var(--win-ink); font-size:14px; transition: background-color 200ms ease, transform 160ms var(--ease-out) }
+    .win-bar button:active{ transform:scale(0.96) }
+    .win-bar button:focus-visible{ outline:2px solid var(--yellow); outline-offset:2px }
+    @media (hover:hover) and (pointer:fine){ .win-bar button:hover{ background:#363165 } }
+    .win-body{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) }
+    .canvas{ background:#ffffff; color:#1b1a2e; padding:18px 20px; display:flex; flex-direction:column; gap:10px }
+    .agent-head{ display:flex; align-items:center; gap:12px }
+    .avatar{ width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--lilac-2); color:var(--violet); font-weight:700; font-size:19px; flex:0 0 auto }
+    .canvas b.name{ display:block; font-size:18px; font-weight:600 }
+    .canvas small{ display:block; color:#55526e; font-size:14px }
+    .field{ background:#f6f4fc; border-radius:10px; padding:10px 12px }
+    .field > span{ display:block; font-size:14px; font-weight:600; color:#55526e; margin-bottom:6px }
+    .chips{ display:flex; flex-wrap:wrap; gap:6px }
+    .chip{ display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:8px; background:#ffffff; font-size:14px; color:#1b1a2e }
+    .chip img{ width:16px; height:16px }
+    .pane{ padding:16px; display:flex; flex-direction:column; gap:10px }
+    .msg{ border-radius:12px; padding:10px 12px; font-size:14px; line-height:1.5 }
+    .msg.you{ align-self:flex-end; max-width:92%; background:var(--violet); color:#fff }
+    .msg.ai{ background:#24204a; color:var(--win-ink) }
+    .msg.agent{ background:#ffffff; color:#1b1a2e }
+    .msg .who{ display:block; font-size:13px; font-weight:600; color:var(--win-dim); margin-bottom:2px }
+    .msg.agent .who{ color:#55526e }
+    .msg .cite{ display:inline-flex; margin-top:8px; padding:3px 8px; border-radius:6px; background:#eef1fd; color:#1f3fa8; font-size:13px }
+    .msg .ok{ color:#8fe8b0; font-weight:600 }
+    .typing::after{ content:""; display:inline-block; width:2px; height:1em; background:var(--violet); vertical-align:-.15em; margin-left:2px; animation: caret 1s steps(1) 8 }
+    @keyframes caret{ 50%{ opacity:0 } }
+    /* Staggered steps inside a window: hidden only when JS runs */
+    .js .win [data-step]{ opacity:0; transform:translateY(8px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); transition-delay:calc(var(--s, 0) * 650ms + 200ms) }
+    .js .win.play [data-step]{ opacity:1; transform:none }
+
+    /* ---------- HERO ---------- */
+    .hero{ position:relative; overflow:hidden; background:#2a1460 }
+    @media (min-width: 1025px){
+      .hero-copy{ color:#ffffff; align-self:start; padding-top:clamp(24px, 7vh, 88px) }
+      .hero-stage .hero-win{ align-self:start; margin-top:calc(clamp(24px, 7vh, 88px) + 8px) }
+    }
+    .site-nav{ position:sticky; top:0; z-index:50 }
+    .navbar{ position:relative; background:var(--bg); transition: box-shadow 240ms ease }
+    .navbar.scrolled{ box-shadow:0 1px 0 rgba(14,16,51,.08), 0 8px 24px rgba(14,16,51,.08) } /* taste-skill-ignore: sticky bar shadow, only after scrolling */
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding-block:20px }
+    .nav ul{ display:flex; gap:clamp(16px, 2.4vw, 36px); list-style:none; margin:0; padding:0; align-items:center }
+    .nav a.navlink{ text-decoration:none; font-weight:500; position:relative }
+    .nav a.navlink::after{ content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform 220ms var(--ease-out) }
+    @media (hover:hover) and (pointer:fine){ .nav a.navlink:hover::after{ transform:scaleX(1) } }
+    .nav .btn{ min-height:48px; padding:0 22px; white-space:nowrap }
+    @media (max-width: 900px){ .nav ul .navlink{ display:none } }
+    .hero-stage{ position:relative; min-height:calc(100svh - 88px); display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap); align-items:center; padding-block:48px 72px }
+    .hero-win{ margin-bottom:8px }
+    .orb{ position:absolute; z-index:0; left:calc(-1 * var(--margin)); right:calc(-1 * var(--margin)); top:0; bottom:0; overflow:hidden; background:#2a1460 }
+    /* a fade, not a frame: the scene melts into the page on every edge */
+    .orb svg{ width:100%; height:100%; display:block }
+    .wave{ animation: drift-x linear infinite }
+    .wave.w1{ animation-duration:38s } .wave.w2{ animation-duration:26s } .wave.w3{ animation-duration:18s }
+    @keyframes drift-x{ from{ transform:translateX(0) } to{ transform:translateX(-320px) } }
+    .glint{ animation: glint 3.2s ease-in-out infinite alternate } .glint:nth-of-type(2n){ animation-delay:-1.4s } .glint:nth-of-type(3n){ animation-delay:-2.2s }
+    @keyframes glint{ from{ opacity:.35 } to{ opacity:1 } }
+    .sunball{ animation: sunset 14s var(--ease-in-out) infinite alternate; transform-box:fill-box; transform-origin:center }
+    @keyframes sunset{ from{ transform:translateY(-10px) } to{ transform:translateY(14px) } }
+    .bird{ animation: glide 16s var(--ease-in-out) infinite alternate }
+    @keyframes glide{ from{ transform:translate(0,0) } to{ transform:translate(40px,-14px) } }
+    .frond{ transform-box:fill-box; transform-origin:0% 50%; animation: sway 6s var(--ease-in-out) infinite alternate }
+    @keyframes sway{ from{ rotate:-2deg } to{ rotate:3deg } }
+    .orb-spark{ display:none }
+    .hero-copy{ position:relative; z-index:2; grid-column:7 / span 6; grid-row:1; padding-left:clamp(0px, 2vw, 32px) }
+    .hero-copy h1{ font-size:clamp(3.25rem, 0.4rem + 4.9vw, 5.5rem) }
+    .hero-copy .when{ font-size:var(--step-head); font-weight:700; letter-spacing:-0.03em; line-height:1.05; margin-top:32px }
+    .hero-copy .lede{ font-size:var(--step-lead); line-height:1.4; margin-top:16px; max-width:30ch }
+    .hero-copy .actions{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 32px; margin-top:40px }
+    .countdown{ font-weight:500 }
+    .hero-win{ position:relative; z-index:2; grid-column:1 / span 5; grid-row:1; margin:0 0 0 clamp(0px, 3vw, 48px); align-self:end; max-width:520px }
+    .hero-win .win-body{ grid-template-columns:1fr }
+    .hero-win figcaption{ margin-top:14px; color:#fff; font-size:var(--step-small); font-weight:500 }
+
+    /* ---------- CHAPTERS ---------- */
+    .chapter{ position:relative; padding:104px 64px }
+    .chapter > .wrap{ padding-inline:0 }
+    figure{ margin:0 }
+    figcaption{ font-size:var(--step-small); margin-top:14px }
+
+    /* Intro: violet field */
+    .intro{ background:var(--violet); color:#fff; display:flex; align-items:center }
+    .intro .grid{ width:100%; align-items:center; row-gap:48px }
+    .intro .copy{ grid-column:1 / span 6; display:flex; flex-direction:column; gap:28px }
+    .intro .statement{ font-size:var(--step-head); font-weight:500; line-height:1.2; letter-spacing:-0.02em; max-width:28ch }
+    .intro .copy p:last-child{ max-width:50ch }
+    .intro .log-wrap{ grid-column:8 / span 5 }
+    .log .win-body{ display:block; padding:18px 20px 20px }
+    .log ol{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px }
+    .log li{ display:grid; grid-template-columns:28px 1fr; gap:10px; align-items:start; font-size:15px }
+    .log li img{ width:22px; height:22px; margin-top:1px }
+    .log li b{ font-weight:600 }
+    .log li span{ color:var(--win-dim) }
+    .log li.done b::after{ content:""; display:inline-block; width:8px; height:8px; margin-left:8px; border-radius:50%; background:#8fe8b0; vertical-align:middle }
+
+    /* Built for Hawaiʻi: lilac */
+    .islands{ background:var(--lilac) }
+    .islands .top{ align-items:end; row-gap:24px; margin-bottom:56px }
+    .islands h2{ grid-column:1 / span 6 }
+    .islands .top p{ grid-column:7 / span 6; max-width:52ch }
+    .story{ align-items:start; row-gap:32px }
+    .tabs{ grid-column:1 / span 4; display:flex; flex-direction:column; gap:8px }
+    .tab{ all:unset; box-sizing:border-box; cursor:pointer; display:block; padding:22px 24px; border-radius:var(--tile); background:#fff; transition: background-color 240ms ease, color 240ms ease, transform 160ms var(--ease-out) }
+    .tab:active{ transform:scale(0.98) }
+    .tab b{ display:block; font-size:var(--step-lead); font-weight:700; letter-spacing:-0.02em; line-height:1.15 }
+    .tab span{ display:block; margin-top:6px; font-size:16px }
+    .tab[aria-selected="true"]{ background:var(--ink); color:#fff }
+    .tab:focus-visible{ outline:3px solid var(--blue); outline-offset:3px }
+    @media (hover:hover) and (pointer:fine){ .tab[aria-selected="false"]:hover{ background:var(--lilac-2) } }
+    .story-panels{ grid-column:5 / span 8 }
+    .story-panels [role="tabpanel"][hidden]{ display:none }
+    .teams .win-body{ grid-template-columns:200px minmax(0,1fr) }
+    .teams .pane{ background:#f5f4fb; color:#1b1a2e; gap:12px; padding:18px 18px 20px; min-height:440px }
+    .teams .rail{ background:#ebe8f7; color:#1b1a2e; padding:16px 14px; display:flex; flex-direction:column; gap:6px; font-size:14px }
+    .teams .rail b{ font-size:13px; color:#55526e; font-weight:600; margin-bottom:4px }
+    .teams .rail span{ padding:7px 10px; border-radius:8px }
+    .teams .rail span.on{ background:#fff; font-weight:600 }
+    .teams .msg.person{ background:#fff; color:#1b1a2e; max-width:86% }
+    .teams .msg.person .who{ color:#55526e }
+    .teams .msg.agent{ background:#e9e4ff; color:#1b1a2e; max-width:92%; align-self:flex-end }
+    .card{ background:#fff; border-radius:10px; padding:10px 12px; margin-top:8px; display:grid; gap:4px; font-size:14px }
+    .card div{ display:flex; justify-content:space-between; gap:12px }
+    .card div span:last-child{ font-weight:600 }
+    .card .act{ display:flex; justify-content:flex-start; gap:8px; margin-top:6px }
+    .card .act i{ font-style:normal; padding:6px 12px; border-radius:6px; background:var(--blue); color:#fff; font-weight:600 }
+    .card .act i + i{ background:#eceaf6; color:#1b1a2e }
+
+    /* Topics: yellow, with a live product scene per topic */
+    .topics{ background:var(--yellow) }
+    .topics .top{ align-items:end; row-gap:20px; margin-bottom:56px }
+    .topics h2{ grid-column:1 / span 6 }
+    .topics .top p{ grid-column:7 / span 6; max-width:48ch }
+    .learn{ align-items:start; row-gap:40px }
+    .topic-list{ grid-column:1 / span 6; list-style:none; margin:0; padding:0; display:flex; flex-direction:column }
+    .topic{ all:unset; box-sizing:border-box; display:grid; grid-template-columns:40px 1fr; column-gap:18px; align-items:center; width:100%; padding:10px 0; cursor:pointer; position:relative }
+    .topic img{ width:40px; height:40px; grid-row:1 / span 2; transition: transform 300ms var(--ease-out) }
+    .topic .name{ font-size:clamp(2.5rem, 0.9rem + 3.9vw, 4.75rem); font-weight:700; letter-spacing:-0.045em; line-height:0.98; text-transform:lowercase; transition: color 220ms ease }
+    .topic .detail{ font-size:16px; font-weight:500; display:grid; grid-template-rows:0fr; transition: grid-template-rows 360ms var(--ease-out) }
+    .topic .detail > span{ overflow:hidden }
+    .topic[aria-selected="true"] .name{ color:var(--violet) }
+    .topic[aria-selected="true"] .detail{ grid-template-rows:1fr }
+    .topic[aria-selected="true"] img{ transform:scale(1.12) }
+    .topic:focus-visible{ outline:3px solid var(--ink); outline-offset:4px; border-radius:12px }
+    .topic .bar{ position:absolute; left:-14px; top:14px; bottom:14px; width:4px; border-radius:2px; background:var(--violet); transform:scaleY(0); transform-origin:top }
+    .topic[aria-selected="true"] .bar{ transform:scaleY(1); transition: transform 6s linear }
+    .topics.paused .topic[aria-selected="true"] .bar, .topics.still .topic[aria-selected="true"] .bar{ transition:none; transform:scaleY(1) }
+    @media (hover:hover) and (pointer:fine){ .topic[aria-selected="false"]:hover .name{ color:#3b1c7a } }
+    .scene-wrap{ grid-column:7 / span 6; position:sticky; top:120px }
+    .scene[hidden]{ display:none }
+    .scene .win-body{ display:block; background:#ffffff; color:#1b1a2e; padding:20px; min-height:420px }
+    .scene figcaption{ margin:0; padding:12px 16px; color:var(--win-dim); font-family:var(--ui); font-size:14px }
+    .sc-h{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:14px }
+    .sc-h b{ font-size:17px; font-weight:600 }
+    .sc-h span{ font-size:13px; color:#55526e }
+    .sc-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 14px; border-radius:10px; background:#f6f4fc; margin-bottom:8px; font-size:14px }
+    .sc-row > span:first-child{ display:grid; grid-template-columns:20px minmax(0,1fr); column-gap:10px; align-items:center; min-width:0 }
+    .sc-row > span:first-child > img{ grid-row:1 / span 3 }
+    .sc-row > span:first-child:not(:has(img)){ display:block }
+    .sc-row img{ width:20px; height:20px; flex:0 0 auto }
+    .sc-row small{ display:block; color:#55526e; font-size:13px }
+    .pill{ font-size:13px; font-weight:600; padding:3px 9px; border-radius:6px; background:#eceaf6; color:#3d3a57; white-space:nowrap }
+    .pill.go{ background:#dcf5e5; color:#11613a }
+    .pill.wait{ background:#fff1c2; color:#6b4e00 }
+    .pill.stop{ background:#fde2e2; color:#9b1c1c }
+    .toggle{ width:38px; height:22px; border-radius:11px; background:#cfcbe3; position:relative; flex:0 0 auto }
+    .toggle::after{ content:""; position:absolute; top:3px; left:3px; width:16px; height:16px; border-radius:50%; background:#fff; transition: transform 300ms var(--ease-out) }
+    .toggle.on{ background:var(--blue) }
+    .js .scene .toggle.on::after{ transform:translateX(0) }
+    .js .scene.play .toggle.on::after, .toggle.on::after{ transform:translateX(16px) }
+    .instr-box{ background:#f6f4fc; border-radius:10px; padding:12px 14px; font-size:14px; line-height:1.55; margin-bottom:10px }
+    .instr-box b{ display:block; font-size:13px; color:#55526e; margin-bottom:4px }
+    .flowline{ display:flex; flex-direction:column; gap:0 }
+    .fstep{ display:grid; grid-template-columns:36px 1fr auto; align-items:center; gap:12px; padding:11px 14px; border-radius:10px; background:#f6f4fc; font-size:14px; position:relative }
+    .fstep img{ width:22px; height:22px }
+    .fstep small{ display:block; color:#55526e; font-size:13px }
+    .fjoin{ width:2px; height:14px; background:#cfcbe3; margin-left:31px }
+    .callog{ margin-top:12px; background:var(--win); color:var(--win-ink); border-radius:10px; padding:12px 14px; font-size:13px; line-height:1.6 }
+    .callog b{ color:#8fe8b0; font-weight:600 }
+    .callog i{ font-style:normal; color:var(--win-dim) }
+    .meter{ height:6px; border-radius:3px; background:#e4e0f3; overflow:hidden; margin-top:6px; width:140px }
+    .meter i{ display:block; height:100%; width:100%; background:var(--blue); transform-origin:left; transform:scaleX(.64) }
+    .js .scene .meter i{ transform:scaleX(.08) }
+    .js .scene.play .meter i{ transform:scaleX(.64); transition: transform 2.4s var(--ease-out) 1.2s }
+    .app{ display:grid; grid-template-columns:minmax(0,1fr) 220px; gap:12px }
+    .app-list .sc-row{ background:#fff; border:1px solid #e7e4f2 } /* taste-skill-ignore: interface fragment */
+    .app-top{ display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:8px; background:#742774; color:#fff; font-size:13px; font-weight:600; margin-bottom:10px }
+    .app-top img{ width:18px; height:18px }
+    .side{ background:#f3eeff; border-radius:10px; padding:10px; display:flex; flex-direction:column; gap:8px; font-size:13px }
+    .side .msg{ font-size:13px; padding:8px 10px }
+    .side .msg.you{ background:var(--violet) }
+    .side .msg.agent{ background:#fff }
+    .gov-t{ width:100%; border-collapse:collapse; font-size:14px }
+    .gov-t th{ text-align:left; font-size:13px; color:#55526e; font-weight:600; padding:6px 8px }
+    .gov-t td{ padding:10px 8px; background:#f6f4fc }
+    .gov-t tr td:first-child{ border-radius:8px 0 0 8px } .gov-t tr td:last-child{ border-radius:0 8px 8px 0 }
+    .gov-t{ border-spacing:0 6px; border-collapse:separate }
+    .js .scene [data-step]{ opacity:0; transform:translateY(8px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); transition-delay:calc(var(--s, 0) * 260ms + 120ms) }
+    .js .scene.play [data-step]{ opacity:1; transform:none }
+
+    /* Drafter: ink */
+    .author{ background:var(--ink); color:#fff }
+    .author .head{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap); row-gap:24px; align-items:end; margin-bottom:56px }
+    .author h2{ grid-column:1 / span 7 }
+    .author .head p{ grid-column:8 / span 5; max-width:44ch }
+    .studio{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap); row-gap:32px; align-items:start }
+    .prompt{ grid-column:1 / span 5 }
+    .prompt label{ display:block; font-size:var(--step-lead); font-weight:500; margin-bottom:16px }
+    .prompt textarea{ width:100%; min-height:168px; resize:vertical; padding:20px 22px; border-radius:var(--tile); border:0; background:#1d2050; color:#fff; font:400 var(--step-body)/1.5 var(--font); transition: background-color 200ms ease }
+    .prompt textarea:focus{ outline:3px solid var(--yellow); outline-offset:2px; background:#23275e }
+    .presets{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px }
+    .preset{ border:0; border-radius:var(--radius); min-height:44px; padding:0 18px; cursor:pointer; background:#23275e; color:#fff; font:500 var(--step-small)/1 var(--font); transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease }
+    .preset:active{ transform:scale(0.97) }
+    .preset[aria-pressed="true"]{ background:var(--yellow); color:var(--ink) }
+    @media (hover:hover) and (pointer:fine){ .preset:hover{ background:#2f3474 } .preset[aria-pressed="true"]:hover{ background:var(--yellow) } }
+    .prompt .note{ font-size:var(--step-small); color:#c9cbe8; margin-top:24px; max-width:44ch }
+    .agent{ grid-column:7 / span 6; background:#fff; color:#1b1a2e; border-radius:16px; overflow:hidden; font-family:var(--ui); font-size:15px; line-height:1.45 }
+    .agent .bar{ display:flex; align-items:center; gap:12px; padding:14px 18px; background:#f4f2fb }
+    .agent .bar img{ width:24px; height:24px }
+    .agent .bar strong{ font-weight:600; font-size:14px }
+    .agent .bar span{ margin-left:auto; font-size:14px; color:#55526e }
+    .agent .body{ padding:22px 22px 8px }
+    .agent .title{ display:flex; align-items:center; gap:14px; margin-bottom:18px }
+    .agent .title b{ display:block; font-size:20px; font-weight:600 }
+    .agent .title small{ display:block; color:#55526e; font-size:14px }
+    .agent dl{ margin:0; display:flex; flex-direction:column; gap:8px }
+    .agent .row{ display:grid; grid-template-columns:120px 1fr; gap:16px; padding:12px 14px; border-radius:10px; background:#f6f4fc }
+    .agent dt{ color:#55526e; font-size:14px; font-weight:600; padding-top:2px }
+    .agent dd{ margin:0 }
+    .agent .chip.new{ animation: chipIn 360ms var(--ease-out) both }
+    @keyframes chipIn{ from{ opacity:0; transform:translateY(6px) scale(0.96) } to{ opacity:1; transform:none } }
+    .agent .foot{ display:flex; justify-content:flex-end; gap:10px; padding:16px 22px 20px }
+    .agent .foot span{ display:inline-flex; align-items:center; min-height:36px; padding:8px 16px; border-radius:6px; font-size:14px; font-weight:600; background:#eceaf6 }
+    .agent .foot span.primary{ background:var(--blue); color:#fff }
+
+    /* Morning accordion: violet tints, dark to light */
+    .morning{ background:var(--bg) }
+    .morning .head{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap); row-gap:24px; align-items:end; margin-bottom:64px }
+    .morning h2{ grid-column:1 / span 6 }
+    .morning .head p{ grid-column:7 / span 5; max-width:46ch }
+    .stages{ display:flex; height:560px; border-radius:var(--tile); overflow:hidden }
+    .stage{ position:relative; flex:1 1 0; min-width:0; overflow:hidden; cursor:pointer; transition: flex-grow 520ms var(--ease-in-out) }
+    .stage[data-open="true"]{ flex-grow:5.2; cursor:default }
+    .stage:nth-child(1){ background:var(--violet-deep); color:#fff }
+    .stage:nth-child(2){ background:var(--violet); color:#fff }
+    .stage:nth-child(3){ background:var(--violet-mid); color:#fff }
+    .stage:nth-child(4){ background:var(--violet-soft); color:var(--ink) }
+    .stage:nth-child(5){ background:var(--lilac-2); color:var(--ink) }
+    .stage > button{ all:unset; position:absolute; inset:0; cursor:pointer; z-index:2 }
+    .stage[data-open="true"] > button{ pointer-events:none }
+    .stage > button:focus-visible{ outline:3px solid var(--yellow); outline-offset:-6px; border-radius:var(--tile) }
+    .stage .sliver{ position:absolute; left:24px; bottom:24px; transform-origin:left bottom; rotate:-90deg; translate:1.1em 0; white-space:nowrap; font-weight:700; font-size:20px; letter-spacing:-0.02em; transition: opacity 240ms ease }
+    .stage[data-open="true"] .sliver{ opacity:0 }
+    .stage .panel{ position:absolute; inset:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); align-items:center; gap:40px; padding:40px; opacity:0; visibility:hidden; transition: opacity 280ms ease, visibility 0s linear 280ms; pointer-events:none; width:calc((100vw - 2 * var(--margin)) * 0.565) }
+    .stage[data-open="true"] .panel{ opacity:1; visibility:visible; transition: opacity 320ms ease 220ms, visibility 0s; pointer-events:auto }
+    .stage .panel .txt{ display:flex; flex-direction:column; justify-content:center; gap:16px }
+    .stage .panel h3{ font-size:var(--step-head); font-weight:700; letter-spacing:-0.03em; line-height:1.02; text-transform:lowercase }
+    .stage .panel p{ max-width:36ch }
+    .mini{ align-self:center; background:var(--win); color:var(--win-ink); border-radius:14px; padding:16px; font-family:var(--ui); font-size:14px; display:flex; flex-direction:column; gap:8px }
+    .mini .h{ display:flex; align-items:center; gap:8px; font-weight:600; margin-bottom:4px }
+    .mini .h img{ width:18px; height:18px }
+    .mini .r{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 12px; border-radius:8px; background:#221f45 }
+    .mini .r span:first-child{ display:flex; align-items:center; gap:8px }
+    .mini .r img{ width:16px; height:16px }
+    .tag{ font-size:13px; font-weight:600; padding:3px 8px; border-radius:6px; background:#2a2650; color:var(--win-dim); white-space:nowrap }
+    .tag.go{ background:#173d2a; color:#8fe8b0 }
+    .tag.wait{ background:#4a3a12; color:#ffe27a }
+    .mini .flow{ display:flex; align-items:center; gap:8px; flex-wrap:wrap }
+    .mini .flow b{ font-weight:600; padding:8px 10px; border-radius:8px; background:#221f45 }
+    .mini .flow i{ font-style:normal; color:var(--win-dim) }
+
+    .photo{ margin:0; align-self:center }
+    .photo img{ width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:14px }
+    .photo figcaption{ font-size:14px; margin-top:10px }
+    .wall .empty .photo{ grid-column:1 / span 5 }
+    /* Speakers */
+    .speakers{ background:var(--lilac); min-height:auto }
+    .speakers .head{ display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:24px 48px; margin-bottom:56px }
+    .speakers .head p{ max-width:46ch; margin-top:20px }
+    .wall{ background:#fff; border-radius:var(--tile); padding:40px }
+    .wall .empty{ display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); column-gap:var(--gap); align-items:center; row-gap:24px }
+    .wall .empty .mini{ grid-column:1 / span 5 }
+    .wall .empty .say{ grid-column:7 / span 6 }
+    .wall .empty b.big{ display:block; font-size:var(--step-head); letter-spacing:-0.03em; line-height:1.05; margin-bottom:12px }
+
+    /* FAQ */
+    .faq .grid{ align-items:start }
+    .faq h2{ grid-column:1 / span 4; position:sticky; top:120px }
+    .faq .tiles{ grid-column:5 / span 8; display:flex; flex-direction:column; gap:8px }
+    .faq details{ background:var(--lilac); border-radius:var(--tile); transition: background-color 240ms ease, color 240ms ease }
+    .faq details[open]{ background:var(--violet); color:#fff }
+    .faq summary{ list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:76px; padding:18px 28px; font-size:var(--step-lead); font-weight:500; letter-spacing:-0.01em; line-height:1.25 }
+    .faq summary::-webkit-details-marker{ display:none }
+    .plus{ position:relative; flex:0 0 18px; height:18px }
+    .plus::before,.plus::after{ content:""; position:absolute; left:0; top:7.5px; width:18px; height:3px; border-radius:2px; background:currentColor; transition: transform 240ms var(--ease-out) }
+    .plus::after{ transform:rotate(90deg) }
+    details[open] .plus::after{ transform:rotate(0deg) }
+    .faq .answer{ padding:0 28px 26px; max-width:58ch }
+    .faq .answer a{ font-weight:500 }
+    @media (hover:hover) and (pointer:fine){ .faq details:not([open]):hover{ background:var(--lilac-2) } }
+
+    /* Close */
+    .close{ background:#1b1440 url('img/photos/sunset-2025.jpg') center 62% / cover no-repeat; color:#fff; display:flex; flex-direction:column; justify-content:space-between; gap:64px }
+    .close h2{ font-size:clamp(3.5rem, 1rem + 8vw, 10rem) }
+    .close .row{ display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:32px }
+    .close .row p{ font-size:var(--step-lead); max-width:34ch }
+    .close .row .btns{ display:flex; flex-wrap:wrap; align-items:center; gap:20px 32px }
+
+    /* Close: dusk surf scene, continuing the hero sunset */
+    .close::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,16,51,.82) 0%, rgba(14,16,51,.35) 45%, rgba(14,16,51,.86) 100%) } /* taste-skill-ignore: neutral scrim over a photograph */
+    .close > *{ position:relative }
+    .close .credit{ position:absolute; right:64px; top:24px; font-size:14px; color:#e7dcff }
+    .surf{ position:relative; margin:0 -64px; height:clamp(260px, 26vw, 400px); overflow:hidden }
+    .surf svg{ width:100%; height:100%; display:block }
+    .surf .w-a{ animation: drift-s 30s linear infinite }
+    .surf .w-b{ animation: drift-s 20s linear infinite }
+    .surf .w-c{ animation: drift-s 13s linear infinite }
+    @keyframes drift-s{ from{ transform:translateX(0) } to{ transform:translateX(-720px) } }
+    .floats{ position:absolute; inset:0; pointer-events:none }
+    .float{ position:absolute; display:flex; align-items:center; gap:12px; padding:12px 16px; border-radius:14px; background:#ffffff; color:#1b1a2e; font-family:var(--ui); font-size:14px; line-height:1.35; animation: float 6s var(--ease-in-out) infinite alternate }
+    .float img{ width:22px; height:22px }
+    .float b{ display:block; font-weight:600 }
+    .float i{ font-style:normal; margin-left:8px }
+    .float.f1{ left:12%; top:52% }
+    .float.f2{ left:41%; top:63%; animation-delay:-2s }
+    .float.f3{ left:69%; top:49%; animation-delay:-4s }
+    @keyframes float{ from{ transform:translateY(0) rotate(-1.5deg) } to{ transform:translateY(-14px) rotate(1.5deg) } }
+    .surfer{ animation: ride 4.8s var(--ease-in-out) infinite alternate; transform-box:fill-box; transform-origin:50% 100% }
+    @keyframes ride{ 0%{ transform:translate(0,0) rotate(-3deg) } 50%{ transform:translate(26px,-16px) rotate(1deg) } 100%{ transform:translate(54px,-4px) rotate(4deg) } }
+    .spray{ animation: spray 1.6s ease-out infinite; transform-box:fill-box; transform-origin:100% 100% }
+    @keyframes spray{ from{ opacity:.9; transform:scale(.6) } to{ opacity:0; transform:scale(1.3) translateX(-10px) } }
+    .star{ animation: twinkle 3s ease-in-out infinite alternate }
+    .star:nth-of-type(2n){ animation-delay:-1.2s } .star:nth-of-type(3n){ animation-delay:-2s }
+    @keyframes twinkle{ from{ opacity:.3 } to{ opacity:1 } }
+    .bubble{ animation: bubble 7.2s var(--ease-out) infinite; transform-box:fill-box; transform-origin:0% 100% }
+    .bubble.b2{ animation-delay:3.6s }
+    @keyframes bubble{ 0%,8%{ opacity:0; transform:translateY(8px) scale(.92) } 16%,42%{ opacity:1; transform:none } 52%,100%{ opacity:0; transform:translateY(-10px) } }
+    .screen-glow{ animation: glow 2.4s ease-in-out infinite alternate }
+    @keyframes glow{ from{ opacity:.7 } to{ opacity:1 } }
+
+    /* Footer: violet */
+    .footer{ background:var(--violet); color:#fff; padding-block:80px 40px; overflow:hidden }
+    .footer .big{ display:flex; align-items:center; gap:2vw; font-weight:700; font-size:clamp(4.5rem, 1rem + 15vw, 17rem); letter-spacing:-0.06em; line-height:0.8; margin-bottom:72px }
+    .footer .big svg{ width:0.8em; height:0.8em; flex:0 0 auto }
+    .footer .cols{ row-gap:40px }
+    .footer .places{ grid-column:1 / span 5; list-style:none; margin:0; padding:0 }
+    .footer .places li{ font-size:var(--step-head); font-weight:700; letter-spacing:-0.03em; line-height:1.25 }
+    .footer .places a{ text-decoration:none }
+    @media (hover:hover) and (pointer:fine){ .footer .places a:hover{ text-decoration:underline; text-decoration-thickness:3px; text-underline-offset:6px } }
+    .footer .links{ grid-column:7 / span 6; display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:24px }
+    .footer .links b{ display:block; font-size:var(--step-small); margin-bottom:10px }
+    .footer .links ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; font-size:16px }
+    .footer .links a{ text-decoration:none }
+    @media (hover:hover) and (pointer:fine){ .footer .links a:hover{ text-decoration:underline } }
+    .logos{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:72px }
+    .logos span{ display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:12px; background:#fff; color:var(--ink); font-size:15px; font-weight:500 }
+    .logos img{ width:24px; height:24px }
+    .legal{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px 40px; margin-top:56px; font-size:15px; line-height:1.55 }
+    .legal p{ max-width:72ch }
+
+    /* ---------- MOTION ---------- */
+    .js [data-rise]{ opacity:0; transform:translateY(24px); transition: opacity 700ms var(--ease-out), transform 900ms var(--ease-out); transition-delay:calc(var(--i, 0) * 80ms) }
+    .js [data-rise].in{ opacity:1; transform:none }
+    .js .orb{ opacity:0; transform:scale(1.06) }
+    .js .orb.open{ opacity:1; transform:none; transition: opacity 1200ms var(--ease-out) 100ms, transform 1800ms var(--ease-out) 100ms }
+    .js .orb-spark{ transform:scale(0.6); opacity:0; transition: transform 900ms var(--ease-out) 900ms, opacity 500ms ease 900ms }
+    .js .orb-spark.open{ transform:none; opacity:1 }
+    .orb-spark.open{ animation: bob 7s var(--ease-in-out) 2s infinite alternate }
+    @keyframes bob{ to{ translate:0 18px } }
+    .log li{ transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out); transition-delay:calc(var(--s, 0) * 420ms + 150ms) }
+    .js .log li{ opacity:0; transform:translateX(-10px) }
+    .js .log.play li{ opacity:1; transform:none }
+    @media (prefers-reduced-motion: reduce){
+      .js [data-rise]{ transform:none; transition: opacity 300ms ease }
+      .js .orb, .js .orb.open{ transform:none; transition: opacity 300ms ease }
+      .wave, .glint, .sunball, .bird, .frond{ animation:none }
+      .surf *, .surfer, .bubble, .float{ animation:none !important }
+      .bubble.b2{ opacity:0 }
+      .js .win [data-step], .js .log li{ transform:none; transition: opacity 200ms ease; transition-delay:0ms }
+      .status .dot::after, .typing::after{ animation:none }
+      .stage, .stage .panel, .stage .sliver{ transition-duration:0ms !important }
+      .agent .chip.new{ animation:none }
+      .js .scene [data-step]{ transform:none; transition: opacity 200ms ease; transition-delay:0ms }
+      .topic .detail, .topic img, .topic .bar{ transition:none !important }
+    }
+
+    /* ---------- TABLET ---------- */
+    @media (max-width: 1024px){
+      :root{ --margin:40px }
+      .hero{ background:var(--bg) }
+      .chapter{ padding:88px 40px }
+      .wall{ padding:28px }
+      .hero-stage{ display:block; min-height:auto; padding-block:10svh 0 }
+      .hero-copy{ max-width:640px }
+      .orb{ position:relative; left:auto; right:auto; top:auto; bottom:auto; width:auto; height:min(84vw, 720px); margin:40px calc(-1 * var(--margin)) calc(-0.42 * min(84vw, 720px)); -webkit-mask-image:linear-gradient(to bottom, transparent 0, #000 10%, #000 86%, transparent 100%); mask-image:linear-gradient(to bottom, transparent 0, #000 10%, #000 86%, transparent 100%) } /* taste-skill-ignore: edge fade the client asked for */
+      .hero-copy, .hero-win{ grid-column:auto; padding-left:0 }
+      .hero-stage{ display:flex; flex-direction:column; align-items:stretch }
+      .hero-copy{ order:0 } .orb{ order:1 } .hero-win{ order:2; position:relative; z-index:2; margin:0 auto; padding-bottom:96px; max-width:560px; width:100% }
+      .intro .copy, .intro .log-wrap{ grid-column:1 / -1 }
+      .islands h2, .islands .top p, .tabs, .story-panels{ grid-column:1 / -1 }
+      .tabs{ flex-direction:row; flex-wrap:wrap }
+      .tab{ padding:14px 20px; border-radius:var(--radius) }
+      .tab b{ font-size:18px }
+      .tab span{ display:none }
+      .topics h2, .topics .top p, .topic-list, .scene-wrap{ grid-column:1 / -1 }
+      .scene-wrap{ position:relative; top:auto }
+      .author .prompt, .author .agent{ grid-column:1 / -1 }
+      .author h2, .author .head p, .morning h2, .morning .head p{ grid-column:1 / -1 }
+      .faq h2{ grid-column:1 / -1; position:static; margin-bottom:40px }
+      .faq .tiles{ grid-column:1 / -1 }
+      .footer .places, .footer .links{ grid-column:1 / -1 }
+      .close h2{ font-size:14.5vw }
+      .surf{ margin:0 -40px }
+      .close .credit{ right:40px }
+      .stages{ flex-direction:column; height:auto }
+      .stage{ flex:none; min-height:64px; transition:none }
+      .stage .sliver{ rotate:0deg; translate:none; left:20px; bottom:auto; top:20px; font-size:18px }
+      .stage .panel{ position:relative; inset:auto; display:none; grid-template-columns:1fr; width:auto; visibility:visible; padding:20px 20px 24px; opacity:1 }
+      .stage[data-open="true"] .panel{ display:grid }
+      .stage[data-open="true"] .sliver{ display:none }
+      .stage .panel p{ font-size:16px; margin-top:12px }
+      .wall .empty .mini, .wall .empty .photo, .wall .empty .say{ grid-column:1 / -1 }
+    }
+
+    /* ---------- PHONE ---------- */
+    @media (max-width: 720px){
+      :root{ --margin:18px }
+      h1,h2{ font-size:11vw; line-height:0.95 }
+      .hero-copy h1{ font-size:11vw }
+      .nav ul .navlink{ display:none }
+      .nav .btn{ min-height:44px; padding:0 18px; font-size:15px }
+      .wordmark{ font-size:26px }
+      .wordmark svg{ width:32px; height:32px }
+      .hero-copy .when{ font-size:24px; margin-top:24px }
+      .hero-copy .lede{ font-size:17px }
+      .status{ font-size:20px }
+      .orb{ height:86vw; margin-bottom:-14vw }
+      .hero-win{ padding-bottom:64px }
+      .orb-spark{ display:none }
+      .win-bar .meta{ display:none }
+      .chapter{ padding:64px 18px }
+      .wall{ padding:20px }
+      .intro .statement{ font-size:24px }
+      .teams .win-body{ grid-template-columns:1fr }
+      .teams .rail{ display:none }
+      .teams .pane{ min-height:0 }
+      .topic{ flex-direction:column; align-items:flex-start; gap:6px; padding-block:0 22px }
+      .topic .name{ font-size:11vw }
+      .topic .detail{ text-align:left; font-size:16px }
+      .topic .detail img{ width:28px; height:28px }
+      .agent .row{ grid-template-columns:1fr; gap:6px }
+      .topic{ grid-template-columns:30px 1fr; column-gap:12px; padding:8px 0 }
+      .topic img{ width:30px; height:30px }
+      .topic .name{ font-size:9.5vw }
+      .topic .bar{ left:-10px }
+      .app{ grid-template-columns:1fr }
+      .scene .win-body{ min-height:0; padding:16px }
+      .gov-t th:nth-child(3), .gov-t td:nth-child(3){ display:none }
+      .faq summary{ font-size:18px; min-height:64px; padding:16px 20px }
+      .faq .answer{ padding:0 20px 20px; font-size:16px }
+      .close h2{ font-size:15vw }
+      .surf{ margin:0 -18px; height:380px }
+      .close .credit{ right:18px }
+      .float.f1{ left:6%; top:34% } .float.f2{ left:18%; top:56% } .float.f3{ left:30%; top:78%; display:none }
+      .close .row .btns, .close .row .btn{ width:100% }
+      .footer .big{ font-size:22vw; margin-bottom:56px }
+      .footer .places li{ font-size:26px }
+      .footer .links{ grid-template-columns:repeat(2, minmax(0,1fr)) }
+    }
   </style>
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-  <!-- App Bar / HERO -->
-  <header class="appbar hero">
-    <div class="container py-5 position-relative">
-      <div class="d-flex justify-content-between align-items-center">
-          <div class="logo-mark text-white">
-              <span class="logo-dot dot-purple"></span>
-              <span class="logo-dot dot-teal"></span>
-              <span class="logo-dot dot-blue"></span>
-              <span class="logo-dot dot-yellow"></span>
-              <h1 class="display-5 fw-bold mt-3">AlohAI</h1>
-              <h4> - Power Platform + AI</h4>
-          </div>
-        <nav class="d-none d-md-flex gap-4">
-          <a class="text-white text-decoration-none" href="#about">About</a>
-          <a class="text-white text-decoration-none" href="#venue">Venue</a>
-          <a class="text-white text-decoration-none" href="#agenda">Agenda</a>
-        </nav>
-      </div>
 
-      <div class="row align-items-center mt-4">
-          <div class="col-lg-7">
-              <p class="lead mb-4">High-energy community event where island vibes meet intelligent apps.</p>
-              <!--<span class="badge-chip">Microsoft Power Platform • AI • Community</span>-->
-              <div class="mt-2 small opacity-75">
-                  ⏰ <strong>Dec 30, 2025</strong> • 9:00 AM–12:00 PM (HST)</strong>
-              </div>
-              <div class="d-flex flex-wrap gap-3">
-                  <!--<a href="#cfp" class="btn btn-outline-brand btn-lg px-4">Submit a Session</a>
-        <a href="#register" class="btn btn-brand btn-lg px-4">Register Now</a>-->
-              </div>
-
-              <!-- Brand / logo art strip (replace with official wordmarks if desired) -->
-              <div class="brand-strip">
-                  <!-- Power Platform -->
-                  <div class="logo-chip chip-pp" title="Microsoft Power Platform">
-                      <img src="img/Microsoft_Power_Platform_logo.svg" height="30px" />
-                      <span>Power Platform</span>
-                  </div>
-                  <!-- Copilot Studio -->
-                  <div class="logo-chip chip-copilot" title="Microsoft Copilot Studio">
-                      <img src="img/Microsoft_Copilot_Studio_logo.svg" height="30px" />
-                      <span>Copilot Studio</span>
-                  </div>
-                  <!-- MCP -->
-                  <div class="logo-chip chip-mcp" title="Microsoft Cloud Partner">
-                      <img src="img/mcp.svg" height="30px" />
-                      <span>MCP</span>
-                  </div>
-                  <!-- GitHub Copilot -->
-                  <div class="logo-chip chip-gh" title="GitHub Copilot">
-                      <img src="img/github-copilot-icon.svg" height="30px" />
-                      <span>GitHub Copilot</span>
-                  </div>
-              </div>
-
-          </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <div class="card card-gradient shadow-soft">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-start gap-3">
-                <div class="icon-blob">
-                  <!-- Simple AI + Hawaii glyph -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
-                    <circle cx="12" cy="12" r="4"/>
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="mb-1">What to expect</h5>
-                  <p class="mb-0">Keynote, lightning talks, and demos with Microsoft MVPs & local leaders. Learn how Copilot and agentic AI supercharge low-code on the Power Platform.</p>
-                </div>
-              </div>
-              <hr class="my-4">
-              <div class="d-flex align-items-start gap-3">
-                <div class="icon-blob">
-                  <!-- Palm frond -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M3 21s3-8 9-8 9 8 9 8"/>
-                    <path d="M6 21s2-6 6-6 6 6 6 6"/>
-                    <path d="M9 21s1-4 3-4 3 4 3 4"/>
-                  </svg>
-                </div>
-                <div>
-                  <h5 class="mb-1">Community + Culture</h5>
-                  <p class="mb-0">We blend tech with aloha — connect with peers, mentors, and partners that care about impactful, human-centered solutions.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Decorative palm -->
-      <!--<svg class="palm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-        <path fill="#00b7c3" d="M64 8c9 0 17 5 24 12 6 6 11 14 12 23-9-6-18-10-28-10-9 0-19 4-28 10 1-9 6-17 12-23 7-7 15-12 24-12z" opacity=".65"/>
-        <path fill="#742774" d="M60 38c-8 5-14 13-17 22 10-6 21-8 31-7 10 0 20 3 30 9-3-9-9-17-17-22-8-5-18-6-27-2z" opacity=".5"/>
-        <rect x="61" y="46" width="6" height="70" rx="3" fill="#0f6cbd"/>
-      </svg>-->
-    </div>
+  <header class="site-nav" id="top">
+    <div class="navbar" id="navbar"><div class="wrap">
+      <nav class="nav" aria-label="Main">
+        <a class="wordmark" href="#top" aria-label="AlohAI home">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><defs><mask id="sea-nav"><rect width="64" height="64" fill="#fff"/><rect y="37" width="64" height="5" rx="2.5" fill="#000"/><rect y="47" width="64" height="5" rx="2.5" fill="#000"/></mask></defs><circle cx="30" cy="34" r="26" fill="#F24A9D" mask="url(#sea-nav)"/><circle cx="52" cy="11" r="7" fill="#FFD638"/></svg>
+          alohai
+        </a>
+        <ul>
+          <li><a class="navlink" href="#islands">For Hawaiʻi</a></li>
+          <li><a class="navlink" href="#topics">Topics</a></li>
+          <li><a class="navlink" href="#morning">Agenda</a></li>
+          <li><a class="navlink" href="#faq">FAQ</a></li>
+          <li><a class="btn btn-ink" href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">Submit a talk</a></li>
+        </ul>
+      </nav>
+    </div></div>
   </header>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-8">
-          <h2 class="fw-bold">About the event</h2>
-          <p class="lead" style="color:#0f172a">AlohAI is a community-run, one-morning conference spotlighting Microsoft Power Platform and the rise of AI-assisted creation. If you’re a maker, dev, analyst, or tech leader, this is your fast pass to what’s next.</p>
-          <ul class="list-unstyled">
-            <li class="mb-2">• Power Apps, Power Automate, Power BI, and Power Pages</li>
-            <li class="mb-2">• Copilot, agentic AI, and real-world demos that ship value</li>
-            <li class="mb-2">• Practical tips you can take back to your org the same week</li>
-          </ul>
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-label="AlohAI 2026">
+
+    <div class="wrap">
+      <div class="hero-stage">
+        <div class="orb" aria-hidden="true">
+          <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
+            <!-- dusk sky in flat bands, darkest where the headline sits -->
+            <rect width="1600" height="900" fill="#2a1460"/>
+            <rect y="300" width="1600" height="200" fill="#3b1c7a"/>
+            <rect y="500" width="1600" height="110" fill="#4a23a0"/>
+            <rect y="610" width="1600" height="60" fill="#5b2ab5"/>
+            <rect y="670" width="1600" height="34" fill="#8b52f4"/>
+            <rect y="704" width="1600" height="22" fill="#f24a9d"/>
+            <rect y="726" width="1600" height="14" fill="#ff9c70"/>
+            <rect y="740" width="1600" height="12" fill="#ffb357"/>
+            <g class="bird" fill="none" stroke="#e7dcff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M700 250 q12 -12 24 0 q12 -12 24 0"/><path d="M752 220 q9 -9 18 0 q9 -9 18 0"/></g>
+            <circle class="sunball" cx="772" cy="752" r="96" fill="#ffd638"/>
+            <rect y="752" width="1600" height="148" fill="#1f3fa8"/>
+            <g fill="#ffd638">
+              <rect class="glint" x="700" y="766" width="144" height="6" rx="3"/>
+              <rect class="glint" x="722" y="782" width="100" height="6" rx="3"/>
+              <rect class="glint" x="744" y="798" width="56" height="6" rx="3"/>
+            </g>
+            <path class="wave w1" fill="#1f52c7" d="M0 812 q80 -12 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V900 H0Z"/>
+            <path class="wave w2" fill="#2764e7" d="M0 848 q80 -14 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V900 H0Z"/>
+            <path class="wave w3" fill="#0094f0" d="M0 882 q80 -16 160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 t160 0 V900 H0Z"/>
+            <path fill="#ffd394" d="M1160 900 Q1360 836 1600 846 V900Z"/>
+            <g transform="translate(1520 900) scale(.62)" fill="#0e1033">
+              <path d="M-14 0 C-4 -120 -20 -260 -56 -380 L-40 -386 C-2 -266 14 -122 14 0Z"/>
+              <g transform="translate(-270 -948)">
+                <path class="frond" d="M222 560 C270 520 340 520 392 556 C340 540 286 548 226 572Z"/>
+                <path class="frond" d="M222 560 C262 500 330 476 378 482 C326 496 276 524 230 570Z"/>
+                <path class="frond" d="M222 560 C210 494 238 444 284 420 C250 460 236 506 232 566Z"/>
+                <path class="frond" d="M222 560 C176 510 114 506 72 530 C120 522 170 534 218 572Z"/>
+                <path class="frond" d="M222 560 C170 560 118 598 98 644 C132 604 176 584 222 574Z"/>
+                <path class="frond" d="M222 560 C262 572 300 610 312 650 C288 614 254 592 220 578Z"/>
+              </g>
+            </g>
+          </svg>
         </div>
-        <div class="col-lg-4" id="venue">
-          <div class="p-4 rounded-4 shadow-soft" style="background:linear-gradient(135deg,#e6fffb,#eef2ff)">
-            <h5 class="fw-bold mb-2">When & Where</h5>
-            <div class="mb-1">📅 <strong>Tuesday, Dec 30, 2025</strong></div>
-            <div class="mb-1">⏰ <strong>9:00 AM – 12:00 PM HST</strong></div>
-            <div class="mb-3">📍 <strong>Entrepreneurs Sandbox, Honolulu</strong></div>
-            <a class="link-map" target="_blank" rel="noreferrer" href="https://www.google.com/maps/search/?api=1&query=643+Ilalo+St,+Honolulu+HI+96813" title="Open in Maps">Open in Maps ↗</a>
+        <div class="orb-spark" aria-hidden="true"></div>
+
+        <div class="hero-copy">
+          <h1 data-rise style="--i:0">author ai agents in honolulu</h1>
+          <p class="when" data-rise style="--i:1">Wednesday, December&nbsp;23, 2026</p>
+          <p class="lede" data-rise style="--i:2">A hands-on morning of AI training for Hawaiʻi's community. Build your first AI agent with Microsoft Copilot Studio and Power&nbsp;Platform.</p>
+          <div class="actions" data-rise style="--i:3">
+            <p class="status"><span class="dot" aria-hidden="true"></span>Registration opens soon</p>
+            <span class="countdown" id="countdown">Honolulu, Hawaiʻi</span>
           </div>
         </div>
+
+        <figure class="hero-win" data-rise style="--i:2">
+          <div class="win" data-ui id="hero-win" role="img" aria-label="Illustration: a maker describes an AI agent for a surf school in Copilot Studio, Copilot drafts it, and a test question gets a booking answer">
+            <div class="win-bar">
+              <img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">
+              Copilot Studio
+              <span class="meta">Illustration · Mālama Surf School</span>
+              <button type="button" id="replay">Replay</button>
+            </div>
+            <div class="win-body">
+              <div class="pane">
+                <div class="msg you" data-step style="--s:0">Create an AI agent that answers questions about our surf lessons and books Saturday slots.</div>
+                <div class="msg ai" data-step style="--s:1"><span class="who">Copilot</span>Done. I drafted <b>Nalu Helper</b>. <span class="ok">Ready to test.</span>
+                  <div class="chips" style="margin-top:8px"><span class="chip"><img src="img/brand/power-pages.svg" alt="" width="16" height="16">Lesson schedule.xlsx</span><span class="chip"><img src="img/brand/power-automate.svg" alt="" width="16" height="16">Book a lesson · agent flow</span></div></div>
+                <div class="msg you" data-step style="--s:2">Test: can I book a beginner lesson Saturday at 9?</div>
+                <div class="msg agent" data-step style="--s:3"><span class="who">Nalu Helper</span><span class="typing">Aloha! Saturday at 9:00 has 3 spots left. Want me to hold one for you?</span></div>
+              </div>
+            </div>
+          </div>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- Calls to action -->
-  <section id="register" class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card shadow-soft h-100">
-            <div class="card-body p-4">
-              <h4 class="fw-bold">Register</h4>
-              <p>Seats are limited. Lock yours in and we’ll keep you posted with agenda updates and speaker drops.</p>
-              <a class="btn btn-brand btn-lg" href="https://forms.office.com/r/eQa42iBEZd" target="_blank" rel="noreferrer" data-action="register-url">Reserve my seat</a>
+  <main>
+    <!-- ================= INTRO ================= -->
+    <section class="chapter intro" id="about" aria-labelledby="about-h">
+      <div class="wrap grid">
+        <div class="copy">
+          <h2 id="about-h" data-rise>ai agents, authored</h2>
+          <p class="statement" data-rise style="--i:1">AI agents aren't coded line by line anymore. They're authored, in plain words, on your own data.</p>
+          <p data-rise style="--i:2">AlohAI is a community-run training morning for Hawaiʻi's makers, small businesses, nonprofits, schools and public servants. You arrive with a job you'd like help with, and you leave with an AI agent you built yourself.</p>
+        </div>
+        <figure class="log-wrap" data-rise style="--i:2">
+          <div class="win log" data-ui id="log" role="img" aria-label="Illustration: the six steps Copilot Studio takes while you author an AI agent for a food bank">
+            <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Copilot at work<span class="meta">Volunteer AI agent</span></div>
+            <div class="win-body">
+              <ol>
+                <li class="done" style="--s:0"><img src="img/brand/copilot-studio.svg" alt="" width="22" height="22"><div><b>Instructions written</b><br><span>From your description, in plain English</span></div></li>
+                <li class="done" style="--s:1"><img src="img/brand/power-pages.svg" alt="" width="22" height="22"><div><b>Knowledge connected</b><br><span>SharePoint · volunteer handbook</span></div></li>
+                <li class="done" style="--s:2"><img src="img/brand/dataverse.svg" alt="" width="22" height="22"><div><b>Data grounded</b><br><span>Dataverse · shifts and volunteers</span></div></li>
+                <li class="done" style="--s:3"><img src="img/brand/power-automate.svg" alt="" width="22" height="22"><div><b>Action added</b><br><span>Agent flow · send a Teams shift invite</span></div></li>
+                <li class="done" style="--s:4"><img src="img/mcp.svg" alt="" width="22" height="22"><div><b>Tool attached</b><br><span>MCP server · community event calendar</span></div></li>
+                <li style="--s:5"><img src="img/brand/agent-365.svg" alt="" width="22" height="22"><div><b>Ready to publish</b><br><span>Teams and Microsoft 365 Copilot, governed in Agent 365</span></div></li>
+              </ol>
+            </div>
+          </div>
+          <figcaption>Illustration: the six steps you'll take at the event.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= BUILT FOR HAWAIʻI ================= -->
+    <section class="chapter islands" id="islands" aria-labelledby="islands-h">
+      <div class="wrap">
+        <div class="grid top">
+          <h2 id="islands-h" data-rise>made for the islands</h2>
+          <p data-rise style="--i:1">AI only matters here if it helps the people here. Every example at AlohAI comes from local work: the shop on the corner, the food bank on Saturday, the classroom on Monday. Pick a story to see an AI agent at work.</p>
+        </div>
+        <div class="grid story">
+          <div class="tabs" role="tablist" aria-label="Local stories" data-rise style="--i:1">
+            <button class="tab" type="button" role="tab" id="t-shop" aria-controls="p-shop" aria-selected="true"><b>Small business</b><span>A lei shop in Kaimukī keeps inter-island orders moving</span></button>
+            <button class="tab" type="button" role="tab" id="t-food" aria-controls="p-food" aria-selected="false" tabindex="-1"><b>Nonprofit</b><span>A food bank fills its Saturday volunteer shifts</span></button>
+            <button class="tab" type="button" role="tab" id="t-class" aria-controls="p-class" aria-selected="false" tabindex="-1"><b>Classroom</b><span>A teacher gives her students a study helper</span></button>
+          </div>
+          <div class="story-panels" data-rise style="--i:2">
+            <figure role="tabpanel" id="p-shop" aria-labelledby="t-shop">
+              <div class="win teams" data-ui>
+                <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Microsoft Teams<span class="meta">Kaimukī Lei Co. · Orders</span></div>
+                <div class="win-body">
+                  <div class="rail"><b>Chats</b><span class="on">Orders AI agent</span><span>Shipping desk</span><span>Family</span></div>
+                  <div class="pane">
+                    <div class="msg person" data-step style="--s:0"><span class="who">Leilani · owner</span>Which orders ship to Maui and Kauaʻi this week?</div>
+                    <div class="msg agent" data-step style="--s:1"><span class="who">Orders AI agent</span>Seven orders ship Thursday: four to Maui, three to Kauaʻi.
+                      <div class="card"><div><span>Maui</span><span>4 orders · 38 lei</span></div><div><span>Kauaʻi</span><span>3 orders · 21 lei</span></div><div class="act"><i>Create packing list</i><i>Email customers</i></div></div>
+                      <span class="cite">Source: Orders.xlsx</span></div>
+                    <div class="msg person" data-step style="--s:2"><span class="who">Leilani · owner</span>Create the packing list.</div>
+                    <div class="msg agent" data-step style="--s:3"><span class="who">Orders AI agent</span><span class="typing">Done. It's in the Shipping folder and the desk has been told.</span></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Illustration. A small business story from the build session; the shop is fictional.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="p-food" aria-labelledby="t-food" hidden>
+              <div class="win teams" data-ui>
+                <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Microsoft Teams<span class="meta">Leeward Food Pantry · Volunteers</span></div>
+                <div class="win-body">
+                  <div class="rail"><b>Chats</b><span class="on">Volunteer AI agent</span><span>Coordinators</span><span>Drivers</span></div>
+                  <div class="pane">
+                    <div class="msg person" data-step style="--s:0"><span class="who">Kainoa · coordinator</span>Saturday's Waiʻanae distribution is short. Who can help?</div>
+                    <div class="msg agent" data-step style="--s:1"><span class="who">Volunteer AI agent</span>Six volunteers are free Saturday morning and live within 15 minutes.
+                      <div class="card"><div><span>Shift</span><span>Sat 7:00 to 11:00</span></div><div><span>Still needed</span><span>4 people</span></div><div class="act"><i>Send shift invites</i><i>See the list</i></div></div>
+                      <span class="cite">Source: Dataverse · Volunteers</span></div>
+                    <div class="msg person" data-step style="--s:2"><span class="who">Kainoa · coordinator</span>Send the invites.</div>
+                    <div class="msg agent" data-step style="--s:3"><span class="who">Volunteer AI agent</span><span class="typing">Sent to six people. I'll let you know as they accept.</span></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Illustration. A nonprofit story from the build session; the pantry is fictional.</figcaption>
+            </figure>
+            <figure role="tabpanel" id="p-class" aria-labelledby="t-class" hidden>
+              <div class="win teams" data-ui>
+                <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Microsoft Teams<span class="meta">Grade 8 Science · Study helper</span></div>
+                <div class="win-body">
+                  <div class="rail"><b>Chats</b><span class="on">Study helper AI agent</span><span>Ms. Akana</span><span>Lab group 3</span></div>
+                  <div class="pane">
+                    <div class="msg person" data-step style="--s:0"><span class="who">Student</span>Why are the islands older as you go northwest?</div>
+                    <div class="msg agent" data-step style="--s:1"><span class="who">Study helper AI agent</span>The Pacific Plate moves northwest over a hot spot. Each island formed over it and then drifted away, so Kauaʻi is older than Hawaiʻi Island.
+                      <span class="cite">Source: Unit 4 notes, page 12</span></div>
+                    <div class="msg person" data-step style="--s:2"><span class="who">Student</span>Can you quiz me on it?</div>
+                    <div class="msg agent" data-step style="--s:3"><span class="who">Study helper AI agent</span><span class="typing">Sure. Question 1: which island sits over the hot spot today?</span></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Illustration. A classroom story from the build session; the class is fictional.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TOPICS ================= -->
+    <section class="chapter topics" id="topics" aria-labelledby="topics-h">
+      <div class="wrap">
+        <div class="grid top">
+          <h2 id="topics-h" data-rise>what you'll build with</h2>
+          <p data-rise style="--i:1">Six building blocks, one AI agent. Pick one to watch it at work, or let the tour run. Every scene is the same volunteer AI agent from the build session.</p>
+        </div>
+        <div class="grid learn">
+          <div class="topic-list" role="tablist" aria-label="Topics" aria-orientation="vertical">
+            <button class="topic" type="button" role="tab" id="tp-1" aria-controls="sc-1" aria-selected="true" data-rise style="--i:0"><span class="bar" aria-hidden="true"></span><img src="img/brand/copilot-studio.svg" alt="" width="40" height="40"><span class="name">copilot studio</span><span class="detail"><span>Authoring AI agents in plain language</span></span></button>
+            <button class="topic" type="button" role="tab" id="tp-2" aria-controls="sc-2" aria-selected="false" tabindex="-1" data-rise style="--i:1"><span class="bar" aria-hidden="true"></span><img src="img/brand/power-automate.svg" alt="" width="40" height="40"><span class="name">agent flows</span><span class="detail"><span>Power Automate as the AI agent's hands</span></span></button>
+            <button class="topic" type="button" role="tab" id="tp-3" aria-controls="sc-3" aria-selected="false" tabindex="-1" data-rise style="--i:2"><span class="bar" aria-hidden="true"></span><img src="img/mcp.svg" alt="" width="40" height="40"><span class="name">mcp tools</span><span class="detail"><span>Tools from Model Context Protocol servers</span></span></button>
+            <button class="topic" type="button" role="tab" id="tp-4" aria-controls="sc-4" aria-selected="false" tabindex="-1" data-rise style="--i:3"><span class="bar" aria-hidden="true"></span><img src="img/brand/dataverse.svg" alt="" width="40" height="40"><span class="name">your data</span><span class="detail"><span>Dataverse and SharePoint as knowledge</span></span></button>
+            <button class="topic" type="button" role="tab" id="tp-5" aria-controls="sc-5" aria-selected="false" tabindex="-1" data-rise style="--i:4"><span class="bar" aria-hidden="true"></span><img src="img/brand/power-apps.svg" alt="" width="40" height="40"><span class="name">power apps</span><span class="detail"><span>Apps with an AI agent working inside them</span></span></button>
+            <button class="topic" type="button" role="tab" id="tp-6" aria-controls="sc-6" aria-selected="false" tabindex="-1" data-rise style="--i:5"><span class="bar" aria-hidden="true"></span><img src="img/brand/agent-365.svg" alt="" width="40" height="40"><span class="name">responsible ai</span><span class="detail"><span>Agent 365, governance and safe rollout</span></span></button>
+          </div>
+
+          <div class="scene-wrap" data-rise style="--i:2">
+            <!-- 1 Copilot Studio -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-1" aria-labelledby="tp-1">
+              <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Copilot Studio<span class="meta">Volunteer AI agent · Overview</span></div>
+              <div class="win-body">
+                <div class="sc-h" data-step style="--s:0"><b>Volunteer AI agent</b><span class="pill wait">Draft</span></div>
+                <div class="instr-box" data-step style="--s:1"><b>Instructions</b><span class="typing">Help coordinators fill Saturday shifts. Look up who is free, send Teams invites, and always confirm before contacting anyone.</span></div>
+                <div class="sc-row" data-step style="--s:2"><span>Generative orchestration<small>The AI agent plans which knowledge and tools to use</small></span><span class="toggle on" aria-hidden="true"></span></div>
+                <div class="sc-row" data-step style="--s:3"><span>Ask before acting<small>Confirm before sending messages</small></span><span class="toggle on" aria-hidden="true"></span></div>
+                <div class="sc-row" data-step style="--s:4"><span>Web search<small>Answer only from your own sources</small></span><span class="toggle" aria-hidden="true"></span></div>
+              </div>
+              <figcaption>Illustration: describing an AI agent and choosing how it behaves.</figcaption>
+            </figure>
+
+            <!-- 2 Agent flows -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-2" aria-labelledby="tp-2" hidden>
+              <div class="win-bar"><img src="img/brand/power-automate.svg" alt="" width="20" height="20">Agent flow<span class="meta">Send shift invites · Run succeeded</span></div>
+              <div class="win-body">
+                <div class="flowline">
+                  <div class="fstep" data-step style="--s:0"><img src="img/brand/copilot-studio.svg" alt="" width="22" height="22"><span>When the AI agent calls this flow<small>Input: shift = Sat 7:00, Waiʻanae</small></span><span class="pill go">0.1 s</span></div>
+                  <div class="fjoin" data-step style="--s:1"></div>
+                  <div class="fstep" data-step style="--s:1"><img src="img/brand/dataverse.svg" alt="" width="22" height="22"><span>List volunteers who are free<small>Dataverse · 6 rows returned</small></span><span class="pill go">0.4 s</span></div>
+                  <div class="fjoin" data-step style="--s:2"></div>
+                  <div class="fstep" data-step style="--s:2"><img src="img/brand/power-automate.svg" alt="" width="22" height="22"><span>For each volunteer: post a shift card<small>Microsoft Teams · adaptive card</small></span><span class="pill go">1.2 s</span></div>
+                  <div class="fjoin" data-step style="--s:3"></div>
+                  <div class="fstep" data-step style="--s:3"><img src="img/brand/copilot-studio.svg" alt="" width="22" height="22"><span>Respond to the AI agent<small>"Invites sent to 6 people"</small></span><span class="pill go">0.1 s</span></div>
+                </div>
+              </div>
+              <figcaption>Illustration: the AI agent hands a job to Power Automate and gets the result back.</figcaption>
+            </figure>
+
+            <!-- 3 MCP tools -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-3" aria-labelledby="tp-3" hidden>
+              <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Copilot Studio<span class="meta">Volunteer AI agent · Tools</span></div>
+              <div class="win-body">
+                <div class="sc-h" data-step style="--s:0"><b>Community calendar</b><span class="pill go">MCP server · Connected</span></div>
+                <div class="sc-row" data-step style="--s:1"><span><img src="img/mcp.svg" alt="" width="20" height="20">list_events<small>Find events by island and date</small></span><span class="toggle on" aria-hidden="true"></span></div>
+                <div class="sc-row" data-step style="--s:2"><span><img src="img/mcp.svg" alt="" width="20" height="20">create_rsvp<small>Sign a volunteer up for an event</small></span><span class="toggle on" aria-hidden="true"></span></div>
+                <div class="sc-row" data-step style="--s:3"><span><img src="img/mcp.svg" alt="" width="20" height="20">delete_event<small>Not needed, kept off</small></span><span class="toggle" aria-hidden="true"></span></div>
+                <div class="callog" data-step style="--s:4"><i>AI agent called</i> list_events(island: "Oʻahu", week: "Dec 21")<br><b>4 events found</b> · Saturday distribution needs 4 more people</div>
+              </div>
+              <figcaption>Illustration: connecting an MCP server and choosing which tools the AI agent may use.</figcaption>
+            </figure>
+
+            <!-- 4 Your data -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-4" aria-labelledby="tp-4" hidden>
+              <div class="win-bar"><img src="img/brand/copilot-studio.svg" alt="" width="20" height="20">Copilot Studio<span class="meta">Volunteer AI agent · Knowledge</span></div>
+              <div class="win-body">
+                <div class="sc-h" data-step style="--s:0"><b>Knowledge sources</b><span>Answers cite these</span></div>
+                <div class="sc-row" data-step style="--s:1"><span><img src="img/brand/power-pages.svg" alt="" width="20" height="20">Volunteer handbook<small>SharePoint · 42 files</small></span><span class="pill go">Ready</span></div>
+                <div class="sc-row" data-step style="--s:2"><span><img src="img/brand/dataverse.svg" alt="" width="20" height="20">Shifts and Volunteers<small>Dataverse · 2 tables, 1,180 rows</small></span><span class="pill go">Ready</span></div>
+                <div class="sc-row" data-step style="--s:3"><span><img src="img/brand/power-pages.svg" alt="" width="20" height="20">Public website<small>Pantry locations and hours</small><span class="meter" aria-hidden="true"><i></i></span></span><span class="pill wait">Indexing</span></div>
+                <div class="callog" data-step style="--s:4"><i>Asked</i> "Where do Saturday volunteers park?"<br><b>Answered</b> · Source: Volunteer handbook, page 6</div>
+              </div>
+              <figcaption>Illustration: grounding the AI agent in your own data, with sources on every answer.</figcaption>
+            </figure>
+
+            <!-- 5 Power Apps -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-5" aria-labelledby="tp-5" hidden>
+              <div class="win-bar"><img src="img/brand/power-apps.svg" alt="" width="20" height="20">Power Apps<span class="meta">Pantry Shifts app</span></div>
+              <div class="win-body">
+                <div class="app">
+                  <div class="app-list">
+                    <div class="app-top" data-step style="--s:0"><img src="img/brand/power-apps.svg" alt="" width="18" height="18">Saturday shifts</div>
+                    <div class="sc-row" data-step style="--s:1"><span>Waiʻanae · 7:00<small>Distribution</small></span><span class="pill stop">4 open</span></div>
+                    <div class="sc-row" data-step style="--s:2"><span>Kapolei · 8:00<small>Sorting</small></span><span class="pill go">Full</span></div>
+                    <div class="sc-row" data-step style="--s:3"><span>Nānākuli · 9:30<small>Delivery</small></span><span class="pill wait">1 open</span></div>
+                  </div>
+                  <div class="side">
+                    <div class="msg you" data-step style="--s:2">Fill the Waiʻanae shift</div>
+                    <div class="msg agent" data-step style="--s:3"><span class="who">AI agent</span>6 people are free. Send them invites?</div>
+                    <div class="msg you" data-step style="--s:4">Yes</div>
+                    <div class="msg agent" data-step style="--s:5"><span class="who">AI agent</span><span class="typing">Sent. I'll update the shift as they accept.</span></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Illustration: the same AI agent working inside a Power App.</figcaption>
+            </figure>
+
+            <!-- 6 Responsible AI -->
+            <figure class="win scene" data-ui role="tabpanel" id="sc-6" aria-labelledby="tp-6" hidden>
+              <div class="win-bar"><img src="img/brand/agent-365.svg" alt="" width="20" height="20">Agent 365<span class="meta">Your organization's AI agents</span></div>
+              <div class="win-body">
+                <table class="gov-t">
+                  <thead><tr data-step style="--s:0"><th>AI agent</th><th>Owner</th><th>Data</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr data-step style="--s:1"><td>Volunteer AI agent</td><td>Kainoa</td><td>Internal</td><td><span class="pill go">Published</span></td></tr>
+                    <tr data-step style="--s:2"><td>Orders AI agent</td><td>Leilani</td><td>Internal</td><td><span class="pill go">Published</span></td></tr>
+                    <tr data-step style="--s:3"><td>Donor AI agent</td><td>Mele</td><td>Confidential</td><td><span class="pill wait">Needs review</span></td></tr>
+                  </tbody>
+                </table>
+                <div class="callog" data-step style="--s:4"><i>Policy</i> Confidential data needs an owner review before publishing<br><b>1 AI agent waiting</b> · reviewer notified</div>
+              </div>
+              <figcaption>Illustration: every AI agent has an owner, a data label and a review before it goes live.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIVE: AUTHOR AN AI AGENT ================= -->
+    <section class="chapter author" id="try" aria-labelledby="try-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="try-h" data-rise>describe it, see your ai agent</h2>
+          <p data-rise style="--i:1">This is the shift the morning is about. In Copilot Studio you start an AI agent by saying what it should do. Type a job below and watch a draft take shape: its instructions, knowledge, tools and trigger.</p>
+        </div>
+        <div class="studio">
+          <div class="prompt" data-rise style="--i:1">
+            <label for="job">What should your AI agent do?</label>
+            <textarea id="job" spellcheck="false">Help customers on our website book a beginner surf lesson in Waikīkī and email them a confirmation.</textarea>
+            <div class="presets" role="group" aria-label="Example jobs">
+              <button class="preset" type="button" aria-pressed="true" data-job="Help customers on our website book a beginner surf lesson in Waikīkī and email them a confirmation.">Surf lessons</button>
+              <button class="preset" type="button" aria-pressed="false" data-job="Find volunteers for Saturday food pantry shifts from our Dataverse list and send them a Teams invite.">Food pantry shifts</button>
+              <button class="preset" type="button" aria-pressed="false" data-job="Every morning, read new lei orders in Excel and email the shipping desk a packing list for Maui and Kauaʻi.">Lei orders</button>
+              <button class="preset" type="button" aria-pressed="false" data-job="Answer student questions about unit 4 using my class notes in SharePoint and quiz them in Teams.">Study helper</button>
+            </div>
+            <p class="note">A sketch of the idea, drafted in your browser by simple rules. The real thing happens in Copilot Studio, and you'll build one at AlohAI.</p>
+          </div>
+
+          <article class="agent" data-ui data-rise style="--i:2" aria-live="polite" aria-label="Draft AI agent">
+            <div class="bar"><img src="img/brand/copilot-studio.svg" alt="" width="24" height="24"><strong>Copilot Studio</strong><span>Draft · not published</span></div>
+            <div class="body">
+              <div class="title"><div class="avatar" id="ag-avatar">B</div><div><b id="ag-name">Booking AI Agent</b><small id="ag-desc">Books lessons for website visitors</small></div></div>
+              <dl>
+                <div class="row"><dt>Instructions</dt><dd id="ag-instr">You are Booking AI Agent. Help customers on our website book a beginner surf lesson in Waikīkī and email them a confirmation. Be warm and brief, cite the source you used, and ask before you take any action.</dd></div>
+                <div class="row"><dt>Knowledge</dt><dd><div class="chips" id="ag-know"><span class="chip"><img src="img/brand/power-pages.svg" alt="" width="16" height="16">Public website</span></div></dd></div>
+                <div class="row"><dt>Tools</dt><dd><div class="chips" id="ag-tools"><span class="chip"><img src="img/mcp.svg" alt="" width="16" height="16">Check availability (MCP server)</span><span class="chip"><img src="img/brand/power-automate.svg" alt="" width="16" height="16">Send an email (Outlook)</span></div></dd></div>
+                <div class="row"><dt>Trigger</dt><dd id="ag-trigger">When someone messages the AI agent</dd></div>
+                <div class="row"><dt>Channels</dt><dd id="ag-channels">Website embed · Microsoft Teams</dd></div>
+              </dl>
+            </div>
+            <div class="foot"><span>Test</span><span class="primary">Publish</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE MORNING ================= -->
+    <section class="chapter morning" id="morning" aria-labelledby="morning-h">
+      <div class="wrap">
+        <div class="head">
+          <h2 id="morning-h" data-rise>how the morning runs</h2>
+          <p data-rise style="--i:1">A waʻa only moves when every seat pulls together. So does an AI agent: instructions, knowledge, tools and someone steering. The morning follows the same order. Times will be posted with the venue.</p>
+        </div>
+        <div class="stages" id="stages" data-rise style="--i:2">
+          <div class="stage" data-open="true">
+            <button type="button" aria-expanded="true" aria-controls="st-1"><span class="sr-only">Arrive and talk story</span></button>
+            <span class="sliver" aria-hidden="true">arrive</span>
+            <div class="panel" id="st-1">
+              <div class="txt"><h3>arrive and talk story</h3><p>Coffee, introductions and the people you'll build next to. Bring a laptop and one real task from your work or community you'd like an AI agent to help with.</p></div>
+              <figure class="photo"><img src="img/photos/alohai-2025-room.jpg" width="1320" height="1693" loading="lazy" alt="Attendees around the tables at AlohAI 2025, listening to a session"><figcaption>AlohAI 2025, Honolulu</figcaption></figure>
+            </div>
+          </div>
+          <div class="stage" data-open="false">
+            <button type="button" aria-expanded="false" aria-controls="st-2"><span class="sr-only">Keynote</span></button>
+            <span class="sliver" aria-hidden="true">keynote</span>
+            <div class="panel" id="st-2">
+              <div class="txt"><h3>the keynote</h3><p>Authoring, not coding. Where AI agents on Power Platform stand at the end of 2026: generative orchestration, agent flows, MCP, and what it means for Hawaiʻi's workforce.</p></div>
+              <div class="mini" data-ui aria-hidden="true">
+                <div class="h"><img src="img/brand/copilot-studio.svg" alt="" width="18" height="18">How an AI agent decides</div>
+                <div class="flow"><b>Question</b><i>→</i><b>Plan</b><i>→</i><b>Knowledge</b><i>→</i><b>Tool</b><i>→</i><b>Answer</b></div>
+                <div class="r"><span><img src="img/brand/power-pages.svg" alt="" width="16" height="16">Search the handbook</span><span class="tag go">Used</span></div>
+                <div class="r"><span><img src="img/brand/power-automate.svg" alt="" width="16" height="16">Send a Teams invite</span><span class="tag go">Used</span></div>
+                <div class="r"><span><img src="img/mcp.svg" alt="" width="16" height="16">Event calendar (MCP)</span><span class="tag">Skipped</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage" data-open="false">
+            <button type="button" aria-expanded="false" aria-controls="st-3"><span class="sr-only">Build session</span></button>
+            <span class="sliver" aria-hidden="true">build</span>
+            <div class="panel" id="st-3">
+              <div class="txt"><h3>build one together</h3><p>Hands-on in Copilot Studio. Describe an AI agent, ground it in real data, give it one agent flow and test it before the coffee is cold.</p></div>
+              <div class="mini" data-ui aria-hidden="true">
+                <div class="h"><img src="img/brand/copilot-studio.svg" alt="" width="18" height="18">Your checklist</div>
+                <div class="r"><span>Describe the AI agent</span><span class="tag go">10 min</span></div>
+                <div class="r"><span>Add knowledge</span><span class="tag go">10 min</span></div>
+                <div class="r"><span>Add an agent flow</span><span class="tag go">20 min</span></div>
+                <div class="r"><span>Test and publish</span><span class="tag wait">15 min</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage" data-open="false">
+            <button type="button" aria-expanded="false" aria-controls="st-4"><span class="sr-only">Lightning talks</span></button>
+            <span class="sliver" aria-hidden="true">lightning talks</span>
+            <div class="panel" id="st-4">
+              <div class="txt"><h3>lightning talks</h3><p>Short, real stories from Microsoft MVPs and local teams who put AI agents to work. Demos encouraged.</p></div>
+              <div class="mini" data-ui aria-hidden="true">
+                <div class="h"><img src="img/brand/copilot-studio.svg" alt="" width="18" height="18">Talks we're looking for</div>
+                <div class="r"><span>An AI agent in production</span><span class="tag">10 min</span></div>
+                <div class="r"><span>A Power App with an AI agent inside</span><span class="tag">10 min</span></div>
+                <div class="r"><span>MCP servers in the wild</span><span class="tag">10 min</span></div>
+                <div class="r"><span>Your first AI agent story</span><span class="tag">5 min</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage" data-open="false">
+            <button type="button" aria-expanded="false" aria-controls="st-5"><span class="sr-only">Steer and close</span></button>
+            <span class="sliver" aria-hidden="true">steer</span>
+            <div class="panel" id="st-5">
+              <div class="txt"><h3>steer, then aloha</h3><p>Responsible AI without the brakes: environments, ALM and Agent 365. Then open questions, a group photo and lunch plans.</p></div>
+              <div class="mini" data-ui aria-hidden="true">
+                <div class="h"><img src="img/brand/agent-365.svg" alt="" width="18" height="18">Agent 365 · your AI agents</div>
+                <div class="r"><span>Orders AI agent</span><span class="tag go">Published</span></div>
+                <div class="r"><span>Volunteer AI agent</span><span class="tag go">Published</span></div>
+                <div class="r"><span>Study helper AI agent</span><span class="tag wait">Needs review</span></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6" id="cfp">
-          <div class="card shadow-soft h-100">
-            <div class="card-body p-4">
-              <h4 class="fw-bold">Submit a session</h4>
-              <p>Got a story, demo, or case study? Share your expertise with the community.</p>
-              <a class="btn btn-outline-dark btn-lg" href="https://sessionize.com/alohai" target="_blank" rel="noreferrer" data-action="cfp-url">Submit to the CFP</a>
+      </div>
+    </section>
+
+    <!-- ================= SPEAKERS ================= -->
+    <section class="chapter speakers" id="speakers" aria-labelledby="speakers-h">
+      <div class="wrap">
+        <div class="head">
+          <div>
+            <h2 id="speakers-h" data-rise>who's on stage</h2>
+            <p data-rise style="--i:1">Microsoft MVPs and local builders. The call for speakers is open until the line-up is full, and first-time speakers are welcome.</p>
+          </div>
+          <a class="btn btn-ink" href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer" data-rise style="--i:2">Submit a talk <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="wall" id="sessionize" data-rise style="--i:2">
+          <div class="empty" id="wall-empty">
+            <figure class="photo"><img src="img/photos/alohai-2025-speaker.jpg" width="1355" height="1800" loading="lazy" alt="Victor Dantas presenting at AlohAI 2025 in front of a full room"></figure>
+            <div class="say">
+              <b class="big">Line-up announced soon.</b>
+              <p>Speakers appear here as they're confirmed; last year's AlohAI filled the room. Built an AI agent for a local team? <a class="textlink" href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">Tell us about it</a>.</p>
             </div>
           </div>
+          <script type="text/javascript" src="https://sessionize.com/api/v2/1ptzotsv/view/SpeakerWall" async></script>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Agenda (Sessionize) -->
-  <section id="agenda" class="py-5">
-    <div class="container">
-      <div class="d-flex align-items-baseline justify-content-between mb-3">
-        <h2 class="fw-bold mb-0">Speakers</h2>
-        <span class="text-muted">Powered by Sessionize</span>
-      </div>
-
-      <!-- Replace SESSIONIZE_ID with your real Sessionize ID or slug -->
-      <div id="sessionize-container" class="sessionize-embed">
-          <!--<div class="text-center px-3">
-              <div class="mb-2 fw-semibold">Agenda coming soon</div>
-              <div class="small">Hook this up by replacing <code>SESSIONIZE_ID</code> in the embed below.</div>
-          </div>-->
-
-          <script type="text/javascript" src="https://sessionize.com/api/v2/1ptzotsv/view/SpeakerWall"></script>
-      </div>
-      <script>
-        /* Example Sessionize embed (uncomment and replace with your ID)
-        (function() {
-          var script = document.createElement('script');
-            script.src = 'https://sessionize.com/api/s/some/1ptzotsv/iframe.sk.js';
-          script.async = true;
-          document.getElementById('sessionize-container').innerHTML = '';
-          document.getElementById('sessionize-container').appendChild(script);
-        })();/*
-        
-      </script>
-    </div>
-  </section>
-
-  <footer class="footer py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-7">
-          <div class="logo-mark text-white mb-2">
-            <span class="logo-dot dot-purple"></span>
-            <span class="logo-dot dot-teal"></span>
-            <span class="logo-dot dot-blue"></span>
-            <span class="logo-dot dot-yellow"></span>
-            <span class="ms-1">AlohAI</span>
-          </div>
-          <div class="small">© 2025 AlohAI Community. Microsoft, Power Platform, Copilot Studio, and GitHub Copilot are trademarks of Microsoft and GitHub.</div>
+    <!-- ================= FAQ ================= -->
+    <section class="chapter faq" id="faq" aria-labelledby="faq-h">
+      <div class="wrap grid">
+        <h2 id="faq-h" data-rise>good questions</h2>
+        <div class="tiles">
+          <details name="faq" data-rise style="--i:0" open>
+            <summary>When and where is AlohAI 2026?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Wednesday, December 23, 2026, in Honolulu. The venue and start time will be announced here soon.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:1">
+            <summary>When does registration open?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Soon. Seats will be limited, and the registration link will appear on this page as soon as it opens.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:2">
+            <summary>Who is it for?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Anyone in Hawaiʻi who wants to put AI to work: small business owners, nonprofit staff, teachers and students, public servants, IT teams and developers. No prior Copilot Studio or AI experience is needed.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:3">
+            <summary>Do I need to write code?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>No. Authoring an AI agent starts with plain language. Developers will find plenty in the MCP, code apps and ALM parts of the morning.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:4">
+            <summary>What should I bring?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>A laptop with a browser, and one real task you'd like an AI agent to help with. A Copilot Studio trial or a work environment you're allowed to experiment in lets you keep what you build.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:5">
+            <summary>Can I speak?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>Please do. Lightning talks and demos about real AI agents are the heart of the morning. <a class="textlink" href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">Submit on Sessionize</a>.</p></div>
+          </details>
+          <details name="faq" data-rise style="--i:6">
+            <summary>Who organizes AlohAI?<span class="plus" aria-hidden="true"></span></summary>
+            <div class="answer"><p>AlohAI is run by the local community and organized by Microsoft MVP Victor Dantas. It isn't an official Microsoft event.</p></div>
+          </details>
         </div>
-        <div class="col-md-5 mt-3 mt-md-0 text-md-end">
-          <a href="#about" class="text-white text-decoration-none me-3">About</a>
-          <a href="#venue" class="text-white text-decoration-none me-3">Venue</a>
-          <a href="#agenda" class="text-white text-decoration-none">Agenda</a>
+      </div>
+    </section>
+
+    <!-- ================= CLOSE ================= -->
+    <section class="chapter close" aria-labelledby="close-h">
+      <div class="wrap"><h2 id="close-h" data-rise>e komo mai, ai builders</h2></div>
+      <div class="surf" aria-hidden="true">
+        <div class="floats">
+          <div class="float f1" data-ui><img src="img/brand/power-automate.svg" alt="" width="22" height="22"><span><b>Orders AI agent</b>7 orders packed for Maui</span><i class="pill go">Done</i></div>
+          <div class="float f2" data-ui><img src="img/brand/dataverse.svg" alt="" width="22" height="22"><span><b>Volunteer AI agent</b>6 shift invites accepted</span><i class="pill go">Done</i></div>
+          <div class="float f3" data-ui><img src="img/brand/copilot-studio.svg" alt="" width="22" height="22"><span><b>Nalu Helper</b>3 lessons booked for Saturday</span><i class="pill go">Done</i></div>
         </div>
+      </div>
+      <div class="wrap row">
+        <p data-rise style="--i:1">Welcome. One morning in Honolulu, December 23, and you leave with an AI agent you authored yourself.</p>
+        <div class="btns" data-rise style="--i:2">
+          <p class="status" style="color:#fff"><span class="dot" aria-hidden="true"></span>Registration opens soon</p>
+          <a class="btn btn-paper" href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">Submit a talk</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="big" aria-hidden="true">
+        <svg viewBox="0 0 64 64"><defs><mask id="sea-foot"><rect width="64" height="64" fill="#fff"/><rect y="37" width="64" height="5" rx="2.5" fill="#000"/><rect y="47" width="64" height="5" rx="2.5" fill="#000"/></mask></defs><circle cx="30" cy="34" r="26" fill="#F24A9D" mask="url(#sea-foot)"/><circle cx="52" cy="11" r="7" fill="#FFD638"/></svg>
+        alohai
+      </div>
+      <div class="grid cols">
+        <ul class="places">
+          <li>Honolulu, Hawaiʻi</li>
+          <li>December 23, 2026</li>
+          <li><a href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">sessionize.com/alohai-2026</a></li>
+        </ul>
+        <div class="links">
+          <div><b>Event</b><ul><li><a href="#about">About</a></li><li><a href="#islands">For Hawaiʻi</a></li><li><a href="#topics">Topics</a></li><li><a href="#morning">Agenda</a></li></ul></div>
+          <div><b>Take part</b><ul><li><a href="#speakers">Speakers</a></li><li><a href="https://sessionize.com/alohai-2026/" target="_blank" rel="noreferrer">Submit a talk</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+          <div><b>Follow</b><ul><li><a href="https://x.com/thevictordantas" target="_blank" rel="noreferrer">@thevictordantas</a></li><li><a href="https://github.com/EyedeasInc/alohai" target="_blank" rel="noreferrer">GitHub</a></li></ul></div>
+        </div>
+      </div>
+      <div class="logos" aria-label="Technologies covered">
+        <span><img src="img/brand/copilot-studio.svg" alt="" width="24" height="24">Microsoft Copilot Studio</span>
+        <span><img src="img/brand/power-platform.svg" alt="" width="24" height="24">Power Platform</span>
+        <span><img src="img/brand/power-apps.svg" alt="" width="24" height="24">Power Apps</span>
+        <span><img src="img/brand/power-automate.svg" alt="" width="24" height="24">Power Automate</span>
+        <span><img src="img/brand/dataverse.svg" alt="" width="24" height="24">Dataverse</span>
+        <span><img src="img/brand/agent-365.svg" alt="" width="24" height="24">Agent 365</span>
+        <span><img src="img/github-copilot-icon.svg" alt="" width="24" height="24">GitHub Copilot</span>
+      </div>
+      <div class="legal">
+        <p>© 2026 AlohAI Community. A community event, not an official Microsoft event. Microsoft, Copilot Studio, Power Platform, Power Apps, Power Automate, Dataverse and Agent 365 are trademarks of Microsoft; GitHub Copilot is a trademark of GitHub. Icons used under Microsoft's icon terms. The product screens on this page are illustrations, and the businesses and people in them are fictional.</p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script>
-    // Smooth scroll for on-page links
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', e=>{
-        const id = a.getAttribute('href');
-        if(id.length>1){
-          e.preventDefault();
-          document.querySelector(id).scrollIntoView({behavior:'smooth'});
-        }
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var $ = function(id){ return document.getElementById(id); };
+
+    /* Sticky menu gets a soft edge once the page scrolls */
+    var bar = $('navbar');
+    function onScroll(){ bar.classList.toggle('scrolled', window.scrollY > 8); }
+    window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+
+    /* Hero orb */
+    var orb = document.querySelector('.orb'), spark = document.querySelector('.orb-spark');
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ orb.classList.add('open'); spark.classList.add('open'); }); });
+
+    /* Section entrances, once; product windows play when seen */
+    var items = document.querySelectorAll('[data-rise]');
+    var wins = document.querySelectorAll('.win');
+    function show(el){ el.classList.add('in'); }
+    function playAll(){ items.forEach(show); wins.forEach(function(w){ w.classList.add('play'); }); }
+    if ('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ show(e.target); io.unobserve(e.target); } });
+      }, { rootMargin:'0px 0px -8% 0px', threshold:0.08 });
+      items.forEach(function(el){ io.observe(el); });
+      var wio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('play'); wio.unobserve(e.target); } });
+      }, { threshold:0.25 });
+      wins.forEach(function(el){ wio.observe(el); });
+    } else { playAll(); }
+    setTimeout(playAll, 7000); /* never leave content hidden */
+
+    function replay(win){
+      if (!win) return;
+      win.classList.remove('play');
+      win.querySelectorAll('.typing').forEach(function(t){ t.classList.remove('typing'); void t.offsetWidth; t.classList.add('typing'); });
+      void win.offsetWidth; win.classList.add('play');
+    }
+    $('replay').addEventListener('click', function(){ replay($('hero-win')); });
+
+    /* Countdown to Dec 23, 2026 (HST) */
+    var days = Math.ceil((Date.UTC(2026, 11, 23, 10, 0, 0) - Date.now()) / 86400000);
+    var cd = $('countdown');
+    if (days > 1) cd.textContent = days + ' days to go · Honolulu';
+    else if (days === 1) cd.textContent = 'Tomorrow · Honolulu';
+    else if (days === 0) cd.textContent = 'Today · Honolulu';
+
+    /* Local stories tabs */
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+    function select(tab){
+      tabs.forEach(function(t){
+        var on = t === tab, panel = $(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panel.hidden = !on;
+        if (on) replay(panel.querySelector('.win'));
+      });
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ select(t); });
+      t.addEventListener('keydown', function(e){
+        var n = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+        if (n){ e.preventDefault(); var next = tabs[(i + n + tabs.length) % tabs.length]; select(next); next.focus(); }
       });
     });
+
+    /* Topics tour: click a topic, or let it cycle while in view */
+    var topicsSec = document.getElementById('topics');
+    var tps = Array.prototype.slice.call(document.querySelectorAll('.topic'));
+    var tourTimer = null, tourIdx = 0, userTook = false, inView = false;
+    function pickTopic(i){
+      tourIdx = i;
+      tps.forEach(function(t, k){
+        var on = k === i, sc = $(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; sc.hidden = !on;
+        if (on) replay(sc);
+      });
+    }
+    function tour(){
+      clearInterval(tourTimer);
+      if (reduce || userTook || !inView){ topicsSec.classList.add('still'); return; }
+      topicsSec.classList.remove('still');
+      tourTimer = setInterval(function(){ pickTopic((tourIdx + 1) % tps.length); }, 6000);
+    }
+    tps.forEach(function(t, i){
+      t.addEventListener('click', function(){ userTook = true; pickTopic(i); tour(); });
+      t.addEventListener('keydown', function(e){
+        var n = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+        if (n){ e.preventDefault(); userTook = true; var j = (i + n + tps.length) % tps.length; pickTopic(j); tps[j].focus(); tour(); }
+      });
+    });
+    topicsSec.addEventListener('mouseenter', function(){ topicsSec.classList.add('paused'); clearInterval(tourTimer); });
+    topicsSec.addEventListener('mouseleave', function(){ topicsSec.classList.remove('paused'); tour(); });
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ inView = es[0].isIntersecting; if (inView) replay($('sc-' + (tourIdx + 1))); tour(); }, { threshold:0.35 }).observe(topicsSec);
+    }
+
+    /* Morning accordion */
+    var stages = Array.prototype.slice.call(document.querySelectorAll('.stage'));
+    stages.forEach(function(st){
+      st.querySelector('button').addEventListener('click', function(){
+        stages.forEach(function(o){ var on = o === st; o.dataset.open = on; o.querySelector('button').setAttribute('aria-expanded', on); });
+      });
+    });
+
+    /* AI agent drafter: simple keyword rules, all client-side */
+    var I = { pa:'img/brand/power-automate.svg', dv:'img/brand/dataverse.svg', pp:'img/brand/power-pages.svg', mcp:'img/mcp.svg', gh:'img/github-copilot-icon.svg', apps:'img/brand/power-apps.svg' };
+    var rules = [
+      { re:/\b(book|booking|reserv|lesson|tour|restaurant|table|hotel|canoe|surf)/i, name:'Booking AI Agent', desc:'Books lessons for website visitors', know:[[I.pp,'Public website']], tools:[[I.mcp,'Check availability (MCP server)']] },
+      { re:/\b(volunteer|shift|food bank|pantry|donat|nonprofit)/i, name:'Volunteer AI Agent', desc:'Fills shifts and answers volunteers', know:[[I.dv,'Dataverse · Volunteers']], tools:[[I.pa,'Send a Teams invite (agent flow)']] },
+      { re:/\b(order|lei|ship|packing|inventory|shop)/i, name:'Orders AI Agent', desc:'Keeps inter-island orders moving', know:[[I.dv,'Excel · Orders']], tools:[[I.pa,'Create a packing list (agent flow)']] },
+      { re:/\b(student|class|teacher|quiz|unit|study|school)/i, name:'Study Helper AI Agent', desc:'Helps students review and practise', know:[[I.pp,'SharePoint · Class notes']], tools:[[I.pa,'Post a quiz in Teams']] },
+      { re:/\b(hr|leave|benefit|pto|policy|policies|onboard)/i, name:'HR AI Agent', desc:'Answers leave and benefits questions', know:[[I.pp,'SharePoint · HR policies']] },
+      { re:/\b(it|ticket|helpdesk|help desk|incident|password|laptop)\b/i, name:'IT Triage AI Agent', desc:'Sorts and resolves IT requests', know:[[I.pp,'SharePoint · IT runbooks']] },
+      { re:/servicenow/i, tools:[[I.pa,'Create incident (ServiceNow)']] },
+      { re:/\b(invoice|expense|finance|approv|purchase|budget)/i, name:'Approvals AI Agent', desc:'Routes spend for approval', know:[[I.dv,'Dataverse · Invoices']], tools:[[I.pa,'Start an approval (agent flow)']] },
+      { re:/\b(email|e-mail|outlook|inbox|mail)\b/i, tools:[[I.pa,'Send an email (Outlook)']] },
+      { re:/\b(excel|spreadsheet|report)/i, tools:[[I.pa,'Read a table (Excel Online)']] },
+      { re:/\bmcp\b/i, tools:[[I.mcp,'Call tools (MCP server)']] },
+      { re:/\b(github|repo|code|pull request)/i, tools:[[I.gh,'GitHub (MCP server)']] },
+      { re:/\bsharepoint\b/i, know:[[I.pp,'SharePoint site']] },
+      { re:/\bdataverse\b/i, know:[[I.dv,'Dataverse tables']] },
+      { re:/\b(app|power apps)\b/i, tools:[[I.apps,'Open record in a Power App']] }
+    ];
+    var job = $('job'), presets = document.querySelectorAll('.preset');
+    function chip(icon, text, isNew){
+      var s = document.createElement('span'); s.className = 'chip' + (isNew && !reduce ? ' new' : '');
+      var im = document.createElement('img'); im.src = icon; im.alt = ''; im.width = 16; im.height = 16;
+      s.appendChild(im); s.appendChild(document.createTextNode(text)); return s;
+    }
+    function fill(box, list, fallback){
+      var before = Array.prototype.map.call(box.children, function(c){ return c.textContent; });
+      box.textContent = '';
+      if (!list.length) list = [fallback];
+      list.forEach(function(p){ box.appendChild(chip(p[0], p[1], before.indexOf(p[1]) === -1)); });
+    }
+    function draft(){
+      var t = job.value.trim(), name = null, desc = null, know = [], tools = [], seen = {};
+      rules.forEach(function(r){
+        if (!r.re.test(t)) return;
+        if (r.name && !name){ name = r.name; desc = r.desc; }
+        (r.know || []).forEach(function(k){ if (!seen[k[1]]){ seen[k[1]] = 1; know.push(k); } });
+        (r.tools || []).forEach(function(k){ if (!seen[k[1]]){ seen[k[1]] = 1; tools.push(k); } });
+      });
+      name = name || 'Aloha AI Agent'; desc = desc || 'A custom AI agent, drafted from your words';
+      var sentence = t ? t.replace(/\s+/g, ' ').replace(/[.!?]*$/, '.') : 'Describe what you need and I will help.';
+      $('ag-name').textContent = name; $('ag-desc').textContent = desc; $('ag-avatar').textContent = name.charAt(0);
+      $('ag-instr').textContent = 'You are ' + name + '. ' + sentence + ' Be warm and brief, cite the source you used, and ask before you take any action.';
+      fill($('ag-know'), know, [I.pp, 'Files you upload']);
+      fill($('ag-tools'), tools, [I.pa, 'Agent flow (Power Automate)']);
+      $('ag-trigger').textContent = /\b(every|daily|each morning|weekly|nightly|schedule)/i.test(t) ? 'Recurrence · every morning, 7:00 HST' :
+        /\b(when an email|email arrives|new email)/i.test(t) ? 'When a new email arrives' : 'When someone messages the AI agent';
+      $('ag-channels').textContent = /\b(website|visitors|public|customers)\b/i.test(t) ? 'Website embed · Microsoft Teams' :
+        /\bteams\b/i.test(t) ? 'Microsoft Teams' : 'Microsoft Teams · Microsoft 365 Copilot';
+    }
+    var timer;
+    job.addEventListener('input', function(){
+      presets.forEach(function(p){ p.setAttribute('aria-pressed', 'false'); });
+      clearTimeout(timer); timer = setTimeout(draft, 220);
+    });
+    presets.forEach(function(p){
+      p.addEventListener('click', function(){
+        presets.forEach(function(o){ o.setAttribute('aria-pressed', o === p ? 'true' : 'false'); });
+        job.value = p.dataset.job; draft();
+      });
+    });
+
+    /* Hide the placeholder once Sessionize renders speakers */
+    var wall = $('sessionize');
+    new MutationObserver(function(){
+      if (wall.querySelector('.sz-speakers, .sessionize-wrapper, [class^="sz-"]')) { var e = $('wall-empty'); if (e) e.remove(); }
+    }).observe(wall, { childList:true, subtree:true });
+  })();
   </script>
 </body>
 </html>
-
